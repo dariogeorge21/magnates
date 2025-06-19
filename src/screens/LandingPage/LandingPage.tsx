@@ -37,11 +37,11 @@ export const LandingPage = (): JSX.Element => {
           <HeroSection />
         </div>
 
-        {/* FrameSubsect - Features Section */}
-        <FeaturesSection />
 
         {/* GroupSubsect - About Us Section */}
         <div className="w-full relative">
+          {/* OverlapWrapperSubsect - Courses Overview Section */}
+        <CoursesOverviewSection />
           <AboutUsSection />
 
           {/* CTA Button */}
@@ -62,8 +62,11 @@ export const LandingPage = (): JSX.Element => {
         {/* FeatureWrapperSubsect - Testimonials Section */}
         <TestimonialsSection />
 
-        {/* OverlapWrapperSubsect - Courses Overview Section */}
-        <CoursesOverviewSection />
+        
+
+        {/* FrameSubsect - Features Section */}
+        <FeaturesSection />
+        form
 
         {/* CtaSubsect - Call to Action Section */}
         <CallToActionSection />

@@ -39,6 +39,7 @@ export const FeaturesSection = (): JSX.Element => {
           />
         </div>
       </div>
+      
     </section>
   );
 };

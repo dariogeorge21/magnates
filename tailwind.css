@@ -1,3 +1,4 @@
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
@@ -11,10 +12,6 @@
   --accent-colordefault: rgba(133, 69, 247, 1);
   --text-color: rgba(15, 0, 26, 1);
 }
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 @layer base {
   :root {
