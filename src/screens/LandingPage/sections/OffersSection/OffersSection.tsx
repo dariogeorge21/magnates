@@ -69,7 +69,7 @@ const benefits = [
   "100% Placement Opportunities",
 ];
 
-export const HeroSection = (): JSX.Element => {
+export const OffersSection = (): JSX.Element => {
   return (
     <section className="w-full py-16 flex flex-col items-center">
       <div className="w-full max-w-6xl mx-auto">
@@ -140,6 +140,7 @@ export const HeroSection = (): JSX.Element => {
                     <h2 className="font-semibold text-[37.3px] leading-[38px] text-[#151bb1]">
                       IDCAF
                     </h2>
+                    <br />
                     <h3 className="font-semibold text-xl text-[#151bb1] mt-[-18px]">
                       International Diploma In Computerised Accounting And
                       Finance
@@ -237,7 +238,6 @@ export const HeroSection = (): JSX.Element => {
                   </div>
                 </div>
 
-                <Separator className="mx-12 bg-[#ffc350]" />
 
                 {/* Certificates */}
                 <div className="px-12 py-6">
@@ -266,6 +266,8 @@ export const HeroSection = (): JSX.Element => {
                     )}
                   </div>
                 </div>
+                <Separator className="mx-12 bg-[#ffc350]" />
+
 
                 {/* Benefits Footer */}
                 <div className="mx-12 mt-4 mb-12">

@@ -5,7 +5,7 @@ import { CallToActionSection } from "./sections/CallToActionSection";
 import { CoursesOverviewSection } from "./sections/CoursesOverviewSection";
 import { FeaturesSection } from "./sections/FeaturesSection";
 import { FooterSection } from "./sections/FooterSection";
-import { HeroSection } from "./sections/HeroSection/HeroSection";
+import { OffersSection } from "./sections/OffersSection/OffersSection";
 import { TestimonialsSection } from "./sections/TestimonialsSection";
 
 export const LandingPage = (): JSX.Element => {
@@ -34,7 +34,7 @@ export const LandingPage = (): JSX.Element => {
 
         {/* OurFirmSubsect - Hero Section */}
         <div className="w-full bg-[url(https://c.animaapp.com/mc28gt7czECAIi/img/header.png)] bg-cover bg-center">
-          <HeroSection />
+          {/* <HeroSection /> */}
         </div>
 
 
@@ -43,6 +43,7 @@ export const LandingPage = (): JSX.Element => {
           {/* OverlapWrapperSubsect - Courses Overview Section */}
         <CoursesOverviewSection />
           <AboutUsSection />
+          
 
           {/* CTA Button */}
           <div className="relative mx-auto container">
@@ -50,13 +51,14 @@ export const LandingPage = (): JSX.Element => {
               Enroll to become a Magnate
             </Button>
           </div>
+          <OffersSection />
 
           {/* Background Image */}
-          <img
+          {/* <img
             className="w-full"
             alt="Rectangle"
             src="https://c.animaapp.com/mc28gt7czECAIi/img/rectangle-14.svg"
-          />
+          /> */}
         </div>
 
         {/* FeatureWrapperSubsect - Testimonials Section */}
