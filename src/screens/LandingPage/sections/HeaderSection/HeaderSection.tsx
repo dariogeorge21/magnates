@@ -5,16 +5,18 @@ export const HeaderSection = (): JSX.Element => {
   return (
     <div className="w-full min-h-screen bg-[#0b1131] relative overflow-hidden" data-model-id="1:548-frame">
       {/* Navigation */}
-      <header className="container mx-auto py-6 px-4 flex justify-between items-center relative z-10">
+      <header className="container mx-auto py-8 px-4 flex justify-between items-center relative z-10">
         <div className="flex items-center">
-          <img 
-            src="/logo.svg" 
-            alt="The Magnates Logo" 
-            className="h-12"
-            onError={(e) => {
-              e.currentTarget.src = "https://placehold.co/200x50/0b1131/FFC350?text=THE+MAGNATES";
-            }}
-          />
+          <div className="flex items-center">
+            <img 
+              src="/logo.svg" 
+              alt="The Magnates Logo" 
+              className="h-12"
+              onError={(e) => {
+                e.currentTarget.src = "https://placehold.co/200x50/0b1131/FFC350?text=THE+MAGNATES";
+              }}
+            />
+          </div>
         </div>
         <nav className="hidden md:flex items-center space-x-8">
           <a href="#" className="text-white hover:text-[#FFC350] border-b-2 border-white pb-1">Home</a>
@@ -33,52 +35,46 @@ export const HeaderSection = (): JSX.Element => {
       </header>
 
       {/* Hero Content */}
-      <div className="container mx-auto px-4 pt-16 pb-24 flex flex-col md:flex-row items-center relative z-10">
-        <div className="md:w-1/2 mb-12 md:mb-0">
-          <h1 className="text-5xl md:text-6xl font-bold text-white leading-tight mb-6">
+      <div className="container mx-auto px-4 pt-32 pb-24 flex flex-col items-center md:items-start md:flex-row relative z-10">
+        <div className="md:w-1/2 mb-12 md:mb-0 text-center md:text-left">
+          <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
             Trusted by parents,<br />
             preferred by students,<br />
             proven by results
           </h1>
-          <p className="text-lg text-gray-300 mb-8 max-w-lg">
+          <p className="text-lg text-gray-300 mb-10 max-w-lg">
             Diploma in computerized accounting and finance – The perfect
             launchpad for a high growth career, shape a smarter future.
           </p>
-          <Button className="bg-[#FFC350] hover:bg-[#FFC350]/90 text-[#0b1131] font-semibold px-8 py-3 rounded-md text-base">
+          <Button className="bg-[#FFC350] hover:bg-[#FFC350]/90 text-[#0b1131] font-bold px-8 py-4 rounded-md text-lg">
             Let's Talk
           </Button>
-        </div>
-        <div className="md:w-1/2 relative">
-          <img 
-            src="https://c.animaapp.com/mc3eajl71Nd39x/img/student-image." 
-            alt="Student with books" 
-            className="relative z-10 max-w-full"
-          />
         </div>
       </div>
 
       {/* Decorative Elements */}
-      <div className="absolute top-1/4 right-1/4 w-16 h-16 bg-[#5b3dfc] rounded-full opacity-20 blur-md"></div>
-      <div className="absolute bottom-1/3 left-1/4 w-24 h-24 bg-[#5b3dfc] rounded-full opacity-20 blur-md"></div>
+      <div className="absolute top-[20%] right-[20%] w-16 h-16 bg-[#5b3dfc] rounded-full opacity-20 blur-md z-0"></div>
+      <div className="absolute bottom-[40%] left-[20%] w-24 h-24 bg-[#5b3dfc] rounded-full opacity-20 blur-md z-0"></div>
       
       {/* Coin Elements */}
-      <img 
-        src="https://c.animaapp.com/mc3eajl71Nd39x/img/coin-1.png" 
-        alt="" 
-        className="absolute top-32 right-64 w-20 h-20 animate-float"
-      />
-      <img 
-        src="https://c.animaapp.com/mc3eajl71Nd39x/img/coin-2.png" 
-        alt="" 
-        className="absolute bottom-40 right-1/4 w-24 h-24 animate-float-delayed"
-      />
+      <div className="absolute left-[5%] top-[35%] w-56 animate-float z-1 pointer-events-none">
+        <svg viewBox="0 0 237 204" fill="none" xmlns="http://www.w3.org/2000/svg">
+          {/* Coin SVG content */}
+        </svg>
+      </div>
+      
+      <div className="absolute right-[5%] top-[55%] w-44 animate-float-delayed z-1 pointer-events-none">
+        <svg viewBox="0 0 176 197" fill="none" xmlns="http://www.w3.org/2000/svg">
+          {/* Coin SVG content */}
+        </svg>
+      </div>
       
       {/* Star Element */}
-      <img 
-        src="https://c.animaapp.com/mc3eajl71Nd39x/img/star.png" 
-        alt="" 
-        className="absolute top-1/3 right-16 w-12 h-12 animate-pulse"
-      />
+      <div className="absolute top-[15%] right-[15%] w-16 animate-float z-1 pointer-events-none">
+        <svg viewBox="0 0 62 66" fill="none" xmlns="http://www.w3.org/2000/svg">
+          {/* Star SVG content */}
+        </svg>
+      </div>
 
       {/* Add animation keyframes to the global CSS */}
       <style>{`
@@ -100,4 +96,4 @@ export const HeaderSection = (): JSX.Element => {
       `}</style>
     </div>
   );
-};
+};  
