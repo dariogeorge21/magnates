@@ -7,6 +7,8 @@ import { FeaturesSection } from "./sections/FeaturesSection";
 import { FooterSection } from "./sections/FooterSection";
 import { OffersSection } from "./sections/OffersSection/OffersSection";
 import { TestimonialsSection } from "./sections/TestimonialsSection";
+import { FormSection } from "./sections/FormSection";
+import { HeaderSection } from "./sections/HeaderSection";
 
 export const LandingPage = (): JSX.Element => {
   return (
@@ -16,30 +18,14 @@ export const LandingPage = (): JSX.Element => {
     >
       <div className="bg-white overflow-hidden w-full relative">
         {/* OverlapGroupWrapperSubsect - Navigation */}
-        <div className="w-full bg-[url(https://c.animaapp.com/mc28gt7czECAIi/img/header.png)] bg-cover bg-center">
-          <nav className="container mx-auto py-[60px] flex justify-end">
-            <div className="flex gap-5">
-              <div className="relative">
-                <div className="font-bold text-white text-sm text-center">
-                  Home
-                </div>
-                <div className="absolute w-[27px] h-0.5 bottom-0 left-1/2 transform -translate-x-1/2 bg-white rounded-[100px]" />
-              </div>
-              <div className="opacity-60 font-semibold text-white text-sm text-center">
-                About Us
-              </div>
-            </div>
-          </nav>
-        </div>
+       
 
-        {/* OurFirmSubsect - Hero Section */}
-        <div className="w-full bg-[url(https://c.animaapp.com/mc28gt7czECAIi/img/header.png)] bg-cover bg-center">
-          {/* <HeroSection /> */}
-        </div>
+       
 
 
         {/* GroupSubsect - About Us Section */}
         <div className="w-full relative">
+          <HeaderSection/>
           {/* OverlapWrapperSubsect - Courses Overview Section */}
         <CoursesOverviewSection />
           <AboutUsSection />
@@ -53,12 +39,7 @@ export const LandingPage = (): JSX.Element => {
           </div>
           <OffersSection />
 
-          {/* Background Image */}
-          {/* <img
-            className="w-full"
-            alt="Rectangle"
-            src="https://c.animaapp.com/mc28gt7czECAIi/img/rectangle-14.svg"
-          /> */}
+          
         </div>
 
         {/* FeatureWrapperSubsect - Testimonials Section */}
@@ -68,7 +49,7 @@ export const LandingPage = (): JSX.Element => {
 
         {/* FrameSubsect - Features Section */}
         <FeaturesSection />
-        form
+        <FormSection/>
 
         {/* CtaSubsect - Call to Action Section */}
         <CallToActionSection />
