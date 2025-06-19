@@ -92,10 +92,10 @@ export const OffersSection = (): JSX.Element => {
           >
             <ToggleGroupItem
               value="6months"
-              className="rounded-[40px] px-5 py-2.5 gap-2.5 bg-[#edeaff] data-[state=on]:bg-[#edeaff]"
+              className="rounded-[40px] px-5 py-2.5 flex items-center gap-2.5 bg-[#edeaff] data-[state=on]:bg-[#edeaff]"
             >
-              <div className="w-[34px] h-[34px] relative bg-[url(https://c.animaapp.com/mc28gt7czECAIi/img/active-bg.png)] bg-cover">
-                <BookOpenIcon className="absolute w-[18px] h-[18px] top-2 left-2 text-[#27149f]" />
+              <div className="w-[34px] h-[34px] flex items-center justify-center bg-[#5b3dfc] rounded-full">
+                <BookOpenIcon className="w-[18px] h-[18px] text-white" />
               </div>
               <span className="font-medium text-[15px] text-[#27149f]">
                 6 Months
@@ -103,10 +103,10 @@ export const OffersSection = (): JSX.Element => {
             </ToggleGroupItem>
             <ToggleGroupItem
               value="1year"
-              className="rounded-[40px] px-5 py-2.5 gap-2.5"
+              className="rounded-[40px] px-5 py-2.5 flex items-center gap-2.5 data-[state=on]:bg-[#edeaff]"
             >
-              <div className="w-[34px] h-[34px] relative">
-                <BookOpenIcon className="absolute w-[18px] h-[18px] top-2 left-2 text-[#0b1131]" />
+              <div className="w-[34px] h-[34px] flex items-center justify-center">
+                <BookOpenIcon className="w-[18px] h-[18px] text-[#0b1131]" />
               </div>
               <span className="font-medium text-[15px] text-[#0b1131]">
                 1 Year
@@ -166,7 +166,7 @@ export const OffersSection = (): JSX.Element => {
                   {/* Program Highlights */}
                   <div className="space-y-3.5">
                     <h4 className="font-semibold text-sm text-[#151bb1] leading-[18px]">
-                      PROGRAM HIGHLIGHTS
+                      Program Highlights
                     </h4>
 
                     <div className="grid grid-cols-2 gap-2">
@@ -203,7 +203,7 @@ export const OffersSection = (): JSX.Element => {
                   {/* Statutory Modules */}
                   <div className="space-y-3.5">
                     <h4 className="font-semibold text-sm text-[#151bb1] leading-[18px]">
-                      STATUTORY MODULES
+                      Statutory Modules
                     </h4>
 
                     <div className="grid grid-cols-2 gap-2">
