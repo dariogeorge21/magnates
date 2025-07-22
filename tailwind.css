@@ -62,9 +62,45 @@
     }
   }
 
+  /* Enhanced tab switching animations */
+  @keyframes iconGlow {
+    0% {
+      box-shadow: 0 0 0 rgba(91, 61, 252, 0);
+    }
+    50% {
+      box-shadow: 0 0 20px rgba(91, 61, 252, 0.4);
+    }
+    100% {
+      box-shadow: 0 2px 8px rgba(91, 61, 252, 0.3);
+    }
+  }
+
+  @keyframes backgroundSlide {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes pulseScale {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1.1);
+    }
+  }
+
   /* Smooth content transitions */
   .content-transition {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .content-fade-in {
@@ -73,6 +109,26 @@
 
   .content-fade-out {
     animation: fadeOutSlide 0.3s ease-in forwards;
+  }
+
+  /* Tab-specific animations */
+  .tab-icon-active {
+    animation: iconGlow 0.4s ease-out forwards, pulseScale 0.4s ease-out forwards;
+  }
+
+  .tab-background-slide {
+    animation: backgroundSlide 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  /* Enhanced hover effects */
+  .tab-hover-effect:hover {
+    transform: scale(1.02);
+    transition: transform 0.2s ease-out;
+  }
+
+  .tab-icon-hover:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s ease-out;
   }
 }
 

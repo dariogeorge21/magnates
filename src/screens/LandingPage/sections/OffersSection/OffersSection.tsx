@@ -190,38 +190,64 @@ export const OffersSection = (): JSX.Element => {
             type="single"
             value={selectedTab}
             onValueChange={handleTabChange}
-            className="p-2 bg-[#ffffff14] rounded-[50px] border-[1.5px] border-solid border-[#edeaff]"
+            className="relative p-2 bg-[#ffffff14] rounded-[50px] border-[1.5px] border-solid border-[#edeaff] overflow-hidden"
           >
+            {/* Animated Background Slider */}
+            <div
+              className={`absolute top-2 bottom-2 bg-[#edeaff] rounded-[40px] transition-all duration-500 ease-out transform ${
+                selectedTab === "6months"
+                  ? "left-2 right-[50%]"
+                  : "left-[50%] right-2"
+              }`}
+              style={{
+                boxShadow: '0 2px 8px rgba(91, 61, 252, 0.15)',
+                zIndex: 1
+              }}
+            />
+
             <ToggleGroupItem
               value="6months"
-              className="rounded-[40px] px-5 py-2.5 flex items-center gap-2.5 bg-[#edeaff] data-[state=on]:bg-[#edeaff] transition-all duration-300 ease-in-out"
+              className="relative z-10 rounded-[40px] px-5 py-2.5 flex items-center gap-2.5 bg-transparent data-[state=on]:bg-transparent transition-all duration-400 ease-out hover:scale-105"
             >
-              <div className={`w-[34px] h-[34px] flex items-center justify-center rounded-full transition-all duration-300 ${
-                selectedTab === "6months" ? "bg-[#5b3dfc]" : "bg-transparent"
+              <div className={`w-[34px] h-[34px] flex items-center justify-center rounded-full transition-all duration-400 ease-out transform ${
+                selectedTab === "6months"
+                  ? "bg-[#5b3dfc] scale-110 shadow-lg shadow-[#5b3dfc]/30"
+                  : "bg-transparent scale-100 hover:scale-105"
               }`}>
-                <BookOpenIcon className={`w-[18px] h-[18px] transition-colors duration-300 ${
-                  selectedTab === "6months" ? "text-white" : "text-[#0b1131]"
+                <BookOpenIcon className={`w-[18px] h-[18px] transition-all duration-400 ease-out ${
+                  selectedTab === "6months"
+                    ? "text-white transform scale-110"
+                    : "text-[#0b1131] transform scale-100"
                 }`} />
               </div>
-              <span className={`font-medium text-[15px] transition-colors duration-300 ${
-                selectedTab === "6months" ? "text-[#27149f]" : "text-[#0b1131]"
+              <span className={`font-medium text-[15px] transition-all duration-400 ease-out ${
+                selectedTab === "6months"
+                  ? "text-[#27149f] font-semibold transform scale-105"
+                  : "text-[#0b1131] font-medium transform scale-100"
               }`}>
                 6 Months
               </span>
             </ToggleGroupItem>
+
             <ToggleGroupItem
               value="1year"
-              className="rounded-[40px] px-5 py-2.5 flex items-center gap-2.5 data-[state=on]:bg-[#edeaff] transition-all duration-300 ease-in-out"
+              className="relative z-10 rounded-[40px] px-5 py-2.5 flex items-center gap-2.5 bg-transparent data-[state=on]:bg-transparent transition-all duration-400 ease-out hover:scale-105"
             >
-              <div className={`w-[34px] h-[34px] flex items-center justify-center rounded-full transition-all duration-300 ${
-                selectedTab === "1year" ? "bg-[#5b3dfc]" : "bg-transparent"
+              <div className={`w-[34px] h-[34px] flex items-center justify-center rounded-full transition-all duration-400 ease-out transform ${
+                selectedTab === "1year"
+                  ? "bg-[#5b3dfc] scale-110 shadow-lg shadow-[#5b3dfc]/30"
+                  : "bg-transparent scale-100 hover:scale-105"
               }`}>
-                <BookOpenIcon className={`w-[18px] h-[18px] transition-colors duration-300 ${
-                  selectedTab === "1year" ? "text-white" : "text-[#0b1131]"
+                <BookOpenIcon className={`w-[18px] h-[18px] transition-all duration-400 ease-out ${
+                  selectedTab === "1year"
+                    ? "text-white transform scale-110"
+                    : "text-[#0b1131] transform scale-100"
                 }`} />
               </div>
-              <span className={`font-medium text-[15px] transition-colors duration-300 ${
-                selectedTab === "1year" ? "text-[#27149f]" : "text-[#0b1131]"
+              <span className={`font-medium text-[15px] transition-all duration-400 ease-out ${
+                selectedTab === "1year"
+                  ? "text-[#27149f] font-semibold transform scale-105"
+                  : "text-[#0b1131] font-medium transform scale-100"
               }`}>
                 1 Year
               </span>
