@@ -6,6 +6,74 @@
   .all-\[unset\] {
     all: unset;
   }
+
+  /* Custom scrollbar styles for horizontal certificate scroll */
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;  /* Safari and Chrome */
+  }
+
+  /* Optional: Add subtle scroll indicators */
+  .scrollbar-hide::before,
+  .scrollbar-hide::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 20px;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .scrollbar-hide::before {
+    left: 0;
+    background: linear-gradient(to right, rgba(255,255,255,0.8), transparent);
+  }
+
+  .scrollbar-hide::after {
+    right: 0;
+    background: linear-gradient(to left, rgba(255,255,255,0.8), transparent);
+  }
+
+  /* Animation for tab content switching */
+  @keyframes fadeInSlide {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeOutSlide {
+    0% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+  }
+
+  /* Smooth content transitions */
+  .content-transition {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .content-fade-in {
+    animation: fadeInSlide 0.5s ease-out forwards;
+  }
+
+  .content-fade-out {
+    animation: fadeOutSlide 0.3s ease-in forwards;
+  }
 }
 
 :root {
