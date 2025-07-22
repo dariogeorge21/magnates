@@ -1,5 +1,18 @@
-import React from "react";
 import { Button } from "../../../../components/ui/button";
+
+// Component Props Interface
+interface HeaderSectionProps {
+  title?: string;
+  subtitle?: string;
+  ctaText?: string;
+  ctaColor?: string;
+  studentImageSrc?: string;
+  studentImageAlt?: string;
+  imageWidth?: string;
+  imageHeight?: string;
+  imageTop?: string;
+  imageLeft?: string;
+}
 
 // Small Circle Component
 const SmallCircle = () => (
@@ -242,11 +255,28 @@ const Star = () => (
   </svg>
 );
 
-export const HeaderSection = (): JSX.Element => {
+export const HeaderSection = ({
+  title = "Trusted by parents,\npreferred by students,\nproven by results",
+  subtitle = "Diploma in computerized accounting and finance – The perfect launchpad for a high growth career, shape a smarter future.",
+  ctaText = "Let's Talk",
+  ctaColor = "#ffc94b",
+  studentImageSrc = "../../../../public/student_with_book.png",
+  studentImageAlt = "Confident student with books showing thumbs up",
+  imageWidth = "477px",
+  imageHeight = "563px",
+  imageTop = "205px",
+  imageLeft = "797px"
+}: HeaderSectionProps = {}): JSX.Element => {
   return (
-    <div className="w-full min-h-screen bg-[#1b1f83] relative overflow-hidden" data-model-id="1:548-frame">
+    <div
+      className="w-full min-h-screen relative overflow-hidden"
+      style={{// color-bg
+        background: 'linear-gradient(135deg, #1b1f83 0%, #2d4de0 50%, #7c3aed 100%)'
+      }}
+      data-model-id="1:548-frame"
+    >
       {/* Navigation */}
-      <header className="container mx-auto py-6 px-4 flex justify-between items-center relative z-10">
+      <header className="container mx-auto py-6 px-4 flex justify-between items-center relative z-20">
         <div className="flex items-center">
         <div className="flex items-center space-x-2">
             <div className="w-[42px] h-14 rotate-0 relative">
@@ -295,80 +325,160 @@ export const HeaderSection = (): JSX.Element => {
         </button>
       </header>
 
-      {/* Hero Content */}
-      <div className="container mx-auto px-4 pt-16 pb-24 flex flex-col md:flex-row items-center relative z-10">
-        <div className="md:w-1/2 mb-12 md:mb-0">
-          <h1 className="text-5xl md:text-6xl font-bold text-white leading-tight mb-6">
-            Trusted by parents,<br />
-            preferred by students,<br />
-            proven by results
+      {/* Hero Content - Two Column Layout */}
+      <main className="container mx-auto px-4 pt-8 pb-16 flex flex-col lg:flex-row items-center min-h-[calc(100vh-120px)] relative z-10" role="main" aria-label="Hero section">
+        {/* Left Content Block */}
+        <div
+          className="lg:w-1/2 mb-12 lg:mb-0 relative z-20 hero-overlap"
+          style={{
+            transform: 'translateX(30px)',
+            marginRight: '-30px'
+          }}
+        >
+          <h1
+            className="font-bold text-white leading-tight mb-6 hero-title"
+            style={{ fontSize: '3rem' }}
+          >
+            {title.split('\n').map((line, index) => (
+              <span key={index}>
+                {line}
+                {index < title.split('\n').length - 1 && <br />}
+              </span>
+            ))}
           </h1>
-          <p className="text-lg text-gray-300 mb-8 max-w-lg">
-            Diploma in computerized accounting and finance – The perfect
-            launchpad for a high growth career, shape a smarter future.
+          <p className="text-lg text-white/80 mb-8 max-w-lg leading-relaxed">
+            {subtitle}
           </p>
-          <Button className="bg-[#FFC350] hover:bg-[#FFC350]/90 text-[#0b1131] font-semibold px-8 py-3 rounded-md text-base">
-            Let's Talk
+          <Button
+            className="text-[#0b1131] font-semibold rounded-lg text-base transition-all hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-transparent"
+            style={{
+              backgroundColor: ctaColor,
+              padding: '10px 20px'
+            }}
+            aria-label={`${ctaText} - Contact us to learn more about our programs`}
+          >
+            {ctaText}
           </Button>
         </div>
-        <div className="md:w-1/2 relative">
-          <img 
-            src="../../../../public/student_with_book.png" 
-            alt="Student" 
-            className="w-full max-w-md mx-auto relative z-20" 
+
+        {/* Right Image Block - Fixed Positioning */}
+        {/* Image positioned absolutely at specific coordinates (477x563px at top:205px, left:797px) */}
+        <div className="absolute top-0 left-0 w-full h-full pointer-events-none z-10">
+          <img
+            src={studentImageSrc}
+            alt={studentImageAlt}
+            className="absolute pointer-events-auto hero-image"
+            style={{
+              width: imageWidth,
+              height: imageHeight,
+              top: imageTop,
+              left: imageLeft,
+              objectFit: 'cover'
+            }}
           />
         </div>
-      </div>
+      </main>
 
-      {/* Decorative Elements */}
-      <div className="absolute bottom-0 left-0 w-40 h-auto animate-float-delayed">
-        <CoinLeft />
-      </div>
-      {/* Coins and Star */}
-      <div className="relative w-full h-full">
-        <div className="absolute top-0 right-0 w-60 h-auto animate-float">
+      {/* Floating Decorative Elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        {/* 3D Coin Left */}
+        <div className="absolute bottom-8 left-8 w-32 lg:w-40 h-auto z-15 animate-float-delayed">
+          <CoinLeft />
+        </div>
+
+        {/* 3D Coin Right */}
+        <div className="absolute top-16 right-8 w-48 lg:w-60 h-auto z-15 animate-float">
           <CoinRight />
         </div>
-        <div className="absolute top-10 left-10 w-16 h-auto z-10">
+
+        {/* Glowing Star */}
+        <div className="absolute top-20 left-16 w-12 lg:w-16 h-auto z-20 animate-float" style={{ animationDelay: '0.5s' }}>
           <Star />
         </div>
-        
-        {/* Small Circles */}
-        <div className="absolute top-[10%] left-[20%]">
-          <SmallCircle />
-        </div>
-        <div className="absolute top-[30%] left-[80%]">
-          <SmallCircle />
-        </div>
-        <div className="absolute top-[50%] left-[10%]">
-          <SmallCircle />
-        </div>
-        <div className="absolute top-[70%] left-[70%]">
-          <SmallCircle />
-        </div>
-        <div className="absolute top-[20%] left-[40%]">
-          <SmallCircle />
-        </div>
 
-        {/* Animation styles */}
-        <style>{`
-          @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-          }
-          @keyframes float-delayed {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
-          }
-          .animate-float {
-            animation: float 6s ease-in-out infinite;
-          }
-          .animate-float-delayed {
-            animation: float-delayed 8s ease-in-out infinite;
-            animation-delay: 1s;
-          }
-        `}</style>
+        {/* Gradient Circles - Responsive positioning */}
+        <div className="absolute top-[15%] left-[25%] z-15 hidden md:block">
+          <SmallCircle />
+        </div>
+        <div className="absolute top-[35%] right-[15%] z-15 hidden lg:block">
+          <SmallCircle />
+        </div>
+        <div className="absolute top-[60%] left-[8%] z-15 hidden md:block">
+          <SmallCircle />
+        </div>
+        <div className="absolute bottom-[25%] right-[25%] z-15 hidden lg:block">
+          <SmallCircle />
+        </div>
+        <div className="absolute top-[25%] left-[45%] z-15 hidden xl:block">
+          <SmallCircle />
+        </div>
       </div>
+
+      {/* Animation styles */}
+      <style>{`
+        @keyframes float {
+          0%, 100% { transform: translateY(0) rotate(0deg); }
+          50% { transform: translateY(-20px) rotate(2deg); }
+        }
+        @keyframes float-delayed {
+          0%, 100% { transform: translateY(0) rotate(0deg); }
+          50% { transform: translateY(-15px) rotate(-2deg); }
+        }
+        .animate-float {
+          animation: float 6s ease-in-out infinite;
+        }
+        .animate-float-delayed {
+          animation: float-delayed 8s ease-in-out infinite;
+          animation-delay: 1s;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 1200px) {
+          .hero-image {
+            left: 600px !important;
+            width: 400px !important;
+            height: 472px !important;
+          }
+        }
+
+        @media (max-width: 1024px) {
+          .hero-image {
+            position: relative !important;
+            top: auto !important;
+            left: auto !important;
+            width: 350px !important;
+            height: 413px !important;
+            margin: 2rem auto 0 auto !important;
+            display: block !important;
+          }
+        }
+
+        @media (max-width: 768px) {
+          .hero-title {
+            font-size: 2.5rem !important;
+          }
+          .hero-overlap {
+            transform: none !important;
+            margin-right: 0 !important;
+          }
+          .hero-image {
+            width: 300px !important;
+            height: 354px !important;
+            margin: 1.5rem auto 0 auto !important;
+          }
+        }
+
+        @media (max-width: 640px) {
+          .hero-title {
+            font-size: 2rem !important;
+          }
+          .hero-image {
+            width: 250px !important;
+            height: 295px !important;
+            margin: 1rem auto 0 auto !important;
+          }
+        }
+      `}</style>
     </div>
   );
 };

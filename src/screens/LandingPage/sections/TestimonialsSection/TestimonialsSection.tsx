@@ -5,7 +5,7 @@ import {
   GraduationCapIcon,
   UsersIcon,
 } from "lucide-react";
-import React from "react";
+
 import { Card, CardContent } from "../../../../components/ui/card";
 
 export const TestimonialsSection = (): JSX.Element => {
