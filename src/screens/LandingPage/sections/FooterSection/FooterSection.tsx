@@ -1,4 +1,4 @@
-import React from "react";
+
 import { Separator } from "../../../../components/ui/separator";
 
 export const FooterSection = (): JSX.Element => {
@@ -33,7 +33,7 @@ export const FooterSection = (): JSX.Element => {
           {/* Logo section */}
           <div className="flex items-center">
             <div className="w-[42px] h-14 rotate-180 relative">
-              <div className="absolute w-[42px] h-[45px] top-0 left-0 bg-[url(https://c.animaapp.com/mc28gt7czECAIi/img/group-16529.png)] bg-[100%_100%]" />
+              <div className="absolute w-[42px] h-[45px] top-0 rotate-180 left-0 bg-[url(https://c.animaapp.com/mc28gt7czECAIi/img/group-16529.png)] bg-[100%_100%]" />
               <img
                 className="absolute w-[25px] h-3 top-11 left-[11px] -rotate-180"
                 alt="Vector"
@@ -41,7 +41,7 @@ export const FooterSection = (): JSX.Element => {
               />
             </div>
             <div className="ml-12">
-              <div className="[font-family:'Reem_Kufi',Helvetica] font-normal text-[#0f1377] text-[11px] leading-[normal]">
+              <div className="[font-family:'Reem_Kufi',Helvetica] font-normal text-[#0f1377] text-[11px] leading-[normal] ">
                 THE
               </div>
               <img
