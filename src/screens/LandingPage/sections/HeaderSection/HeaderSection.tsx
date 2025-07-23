@@ -363,7 +363,7 @@ export const HeaderSection = ({
 
         {/* Right Image Block - Fixed Positioning */}
         {/* Image positioned absolutely at specific coordinates (477x563px at top:205px, left:797px) */}
-        <div className="absolute top-0 left-0 w-full h-full pointer-events-none z-10">
+        <div className="absolute bottom-0 left-0 w-full h-full pointer-events-none z-10">
           <img
             src={studentImageSrc}
             alt={studentImageAlt}
