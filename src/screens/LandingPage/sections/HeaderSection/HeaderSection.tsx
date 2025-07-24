@@ -264,14 +264,14 @@ export const HeaderSection = ({
   studentImageAlt = "Confident student with books showing thumbs up",
   imageWidth = "477px",
   imageHeight = "563px",
-  imageTop = "205px",
+  imageTop = "250px",
   imageLeft = "797px"
 }: HeaderSectionProps = {}): JSX.Element => {
   return (
     <div
       className="w-full min-h-screen relative overflow-hidden"
       style={{// color-bg
-        background: 'linear-gradient(135deg, #1b1f83 0%, #2d4de0 50%, #7c3aed 100%)'
+        background: 'radial-gradient(circle at 50% 50%, #3F43A9 0%, #0F1377 100%)'
       }}
       data-model-id="1:548-frame"
     >
@@ -329,15 +329,18 @@ export const HeaderSection = ({
       <main className="container mx-auto px-4 pt-8 pb-16 flex flex-col lg:flex-row items-center min-h-[calc(100vh-120px)] relative z-10" role="main" aria-label="Hero section">
         {/* Left Content Block */}
         <div
-          className="lg:w-1/2 mb-12 lg:mb-0 relative z-20 hero-overlap"
+          className="lg:w-1/2 mb-12 lg:mb-0 relative z-20 hero-overlap lg:min-h-[280px]"
           style={{
-            transform: 'translateX(30px)',
-            marginRight: '-30px'
+            transform: 'translateX(-120px)',
+            marginRight: '100px',
+            width: '800px',         
+            maxWidth: '800px',      
+            minHeight: '280px' 
           }}
         >
           <h1
-            className="font-bold text-white leading-tight mb-6 hero-title"
-            style={{ fontSize: '3rem' }}
+            className="font-bold text-white leading-tight mb-8 text-5xl hero-title"
+            style={{ fontSize: '56px' }}
           >
             {title.split('\n').map((line, index) => (
               <span key={index}>
@@ -353,7 +356,7 @@ export const HeaderSection = ({
             className="text-[#0b1131] font-semibold rounded-lg text-base transition-all hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-transparent"
             style={{
               backgroundColor: ctaColor,
-              padding: '10px 20px'
+              padding: '20px 30px'
             }}
             aria-label={`${ctaText} - Contact us to learn more about our programs`}
           >
@@ -363,11 +366,11 @@ export const HeaderSection = ({
 
         {/* Right Image Block - Fixed Positioning */}
         {/* Image positioned absolutely at specific coordinates (477x563px at top:205px, left:797px) */}
-        <div className="absolute bottom-0 left-0 w-full h-full pointer-events-none z-10">
+        <div className="absolute top-0 left-0 w-full h-full pointer-events-none z-10">
           <img
             src={studentImageSrc}
             alt={studentImageAlt}
-            className="absolute pointer-events-auto hero-image"
+            className="absolute pointer-events-auto hero-image bottom-0 lg:min-h-[280px]"
             style={{
               width: imageWidth,
               height: imageHeight,
@@ -379,39 +382,62 @@ export const HeaderSection = ({
         </div>
       </main>
 
-      {/* Floating Decorative Elements */}
-      <div className="absolute inset-0 pointer-events-none">
-        {/* 3D Coin Left */}
-        <div className="absolute bottom-8 left-8 w-32 lg:w-40 h-auto z-15 animate-float-delayed">
-          <CoinLeft />
-        </div>
+      {/* Fixed Positioned Decorative Elements */}
+      {/* CoinRight component - Fixed at 103.4px from right, 471.27px from bottom */}
+      <div
+        className="pointer-events-none z-15 animate-float"
+        style={{
+          position: 'absolute',
+          right: '143px',
+          bottom: '410px',
+          width: 'auto',
+          height: 'auto'
+        }}
+      >
+        <CoinRight />
+      </div>
 
-        {/* 3D Coin Right */}
-        <div className="absolute top-16 right-8 w-48 lg:w-60 h-auto z-15 animate-float">
-          <CoinRight />
-        </div>
+      {/* CoinLeft component - Fixed at 691.64px from left, 56px from bottom */}
+      <div
+        className="pointer-events-none z-15 animate-float-delayed"
+        style={{
+          position: 'absolute',
+          left: '900px',
+          bottom: '1px',
+          width: 'auto',
+          height: 'auto'
+        }}
+      >
+        <CoinLeft />
+      </div>
 
-        {/* Glowing Star */}
-        <div className="absolute top-20 left-16 w-12 lg:w-16 h-auto z-20 animate-float" style={{ animationDelay: '0.5s' }}>
-          <Star />
-        </div>
+      {/* Star component - Fixed at 55.08px from right, 277.69px from bottom with dimensions 66.92px × 70.31px */}
+      <div
+        className="pointer-events-none z-20 animate-float"
+        style={{
+          position: 'absolute',
+          right: '155px',
+          bottom: '207px',
+          width: '66.92px',
+          height: '70.31px',
+          animationDelay: '0.5s'
+        }}
+      >
+        <Star />
+      </div>
 
-        {/* Gradient Circles - Responsive positioning */}
-        <div className="absolute top-[15%] left-[25%] z-15 hidden md:block">
-          <SmallCircle />
-        </div>
-        <div className="absolute top-[35%] right-[15%] z-15 hidden lg:block">
-          <SmallCircle />
-        </div>
-        <div className="absolute top-[60%] left-[8%] z-15 hidden md:block">
-          <SmallCircle />
-        </div>
-        <div className="absolute bottom-[25%] right-[25%] z-15 hidden lg:block">
-          <SmallCircle />
-        </div>
-        <div className="absolute top-[25%] left-[45%] z-15 hidden xl:block">
-          <SmallCircle />
-        </div>
+      {/* Small Circle component - Fixed at 568.44px from right, 563.43px from bottom */}
+      <div
+        className="pointer-events-none z-15"
+        style={{
+          position: 'absolute',
+          right: '918px',
+          bottom: '683px',
+          width: 'auto',
+          height: 'auto'
+        }}
+      >
+        <SmallCircle />
       </div>
 
       {/* Animation styles */}
