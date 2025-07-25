@@ -196,32 +196,32 @@ export const OffersSection = (): JSX.Element => {
   };
 
   return (
-    <section className="w-full py-16 flex flex-col items-center">
-      <div className="w-full max-w-6xl mx-auto">
+    <section className="w-full py-10 md:py-16 flex flex-col items-center">
+      <div className="w-full max-w-full md:max-w-6xl mx-auto px-2 md:px-0">
         {/* Section Header */}
-        <div className="text-center mb-12">
-          <h3 className="font-semibold text-2xl text-[#151bb1] mb-2">
+        <div className="text-center mb-8 md:mb-12">
+          <h3 className="font-semibold text-lg md:text-2xl text-[#151bb1] mb-1 md:mb-2">
             Courses Offered
           </h3>
-          <h2 className="font-bold text-5xl text-[#0b1131]">
+          <h2 className="font-bold text-2xl md:text-5xl text-[#0b1131]">
             DISCOVER THE MAGNATE courses
           </h2>
         </div>
 
         {/* Duration Toggle */}
-        <div className="flex justify-center mb-8">
+        <div className="flex justify-center mb-6 md:mb-8">
           <ToggleGroup
             type="single"
             value={selectedTab}
             onValueChange={handleTabChange}
-            className="relative p-2 bg-[#ffffff14] rounded-[50px] border-[1.5px] border-solid border-[#edeaff] overflow-hidden"
+            className="relative p-1 md:p-2 bg-[#ffffff14] rounded-[50px] border-[1.5px] border-solid border-[#edeaff] overflow-hidden"
           >
             {/* Animated Background Slider */}
             <div
-              className={`absolute top-2 bottom-2 bg-[#edeaff] rounded-[40px] transition-all duration-500 ease-out transform ${
+              className={`absolute top-1 md:top-2 bottom-1 md:bottom-2 bg-[#edeaff] rounded-[40px] transition-all duration-500 ease-out transform ${
                 selectedTab === "6months"
-                  ? "left-2 right-[50%]"
-                  : "left-[50%] right-2"
+                  ? "left-1 md:left-2 right-1/2 md:right-[50%]"
+                  : "left-1/2 md:left-[50%] right-1 md:right-2"
               }`}
               style={{
                 boxShadow: '0 2px 8px rgba(91, 61, 252, 0.15)',
@@ -291,48 +291,48 @@ export const OffersSection = (): JSX.Element => {
             <CardContent className="p-0">
               {/* Background Effect */}
               <div
-                className="relative min-h-[600px] bg-cover bg-center bg-no-repeat"
-                style={{ backgroundImage: 'url(/public/bg-effect-3.png)' }}
+                className="relative min-h-[500px] md:min-h-[600px] bg-cover bg-center bg-no-repeat"
+                style={{ backgroundImage: 'url(/bg-effect-3.png)' }}
               >
 
                 <div className="absolute inset-0">
                   {/* Course Header */}
-                  <div className="flex px-12 pt-10 pb-6 relative">
-                    <div className="w-[282px] font-medium text-sm text-[#0b1131] transition-all duration-300">
+                  <div className="flex flex-col md:flex-row px-4 md:px-12 pt-6 md:pt-10 pb-4 md:pb-6 relative gap-4 md:gap-0">
+                    <div className="w-full md:w-[282px] font-medium text-xs md:text-sm text-[#0b1131] transition-all duration-300 mb-2 md:mb-0">
                       {currentCourse.idealFor}
                     </div>
 
-                    <Separator orientation="vertical" className="mx-6 h-[70px]" />
+                    <Separator orientation="vertical" className="hidden md:block mx-6 h-[70px]" />
 
                     <div className="flex flex-col">
-                      <h2 className="font-semibold text-[37.3px] leading-[38px] text-[#151bb1] transition-all duration-300">
+                      <h2 className="font-semibold text-2xl md:text-[37.3px] leading-tight md:leading-[38px] text-[#151bb1] transition-all duration-300">
                         {currentCourse.courseName}
                       </h2>
-                      <br />
-                      <h3 className="font-semibold text-xl text-[#151bb1] mt-[-18px] transition-all duration-300">
+                      <br className="hidden md:block" />
+                      <h3 className="font-semibold text-lg md:text-xl text-[#151bb1] mt-[-8px] md:mt-[-18px] transition-all duration-300">
                         {currentCourse.courseFullName}
                       </h3>
                     </div>
 
-                    <div className="absolute right-12 top-0 w-[157px] h-[66px] bg-[url(https://c.animaapp.com/mc28gt7czECAIi/img/mask-group-1.png)] bg-cover">
-                      <div className="relative w-[122px] h-[30px] top-px left-[22px]">
-                        <div className="absolute w-[27px] top-0 left-0 font-bold text-[44px] text-[#151bb1] leading-[68px] transition-all duration-300">
+                    <div className="absolute right-4 md:right-12 top-0 w-[110px] md:w-[157px] h-[46px] md:h-[66px] bg-[url(https://c.animaapp.com/mc28gt7czECAIi/img/mask-group-1.png)] bg-cover">
+                      <div className="relative w-[90px] md:w-[122px] h-[20px] md:h-[30px] top-px left-[10px] md:left-[22px]">
+                        <div className="absolute w-[20px] md:w-[27px] top-0 left-0 font-bold text-2xl md:text-[44px] text-[#151bb1] leading-tight md:leading-[68px] transition-all duration-300">
                           {currentCourse.duration}
                         </div>
-                        <div className="absolute w-[83px] top-[19px] left-[35px] font-medium text-base text-[#151bb1] leading-7">
+                        <div className="absolute w-[60px] md:w-[83px] top-[12px] md:top-[19px] left-[20px] md:left-[35px] font-medium text-xs md:text-base text-[#151bb1] leading-5 md:leading-7">
                           {selectedTab === "6months" ? "Month" : "Year"}
                         </div>
                       </div>
                     </div>
                   </div>
 
-                <Separator className="mx-12 bg-[#ffc350]" />
+                <Separator className="mx-4 md:mx-12 bg-[#ffc350]" />
 
                   {/* Course Content */}
-                  <div className="grid grid-cols-2 gap-8 px-12 py-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 px-4 md:px-12 py-4 md:py-6">
                     {/* Program Highlights */}
-                    <div className="space-y-3.5">
-                      <h4 className="font-semibold text-sm text-[#151bb1] leading-[18px]">
+                    <div className="space-y-2 md:space-y-3.5">
+                      <h4 className="font-semibold text-xs md:text-sm text-[#151bb1] leading-tight md:leading-[18px]">
                         Program Highlights
                       </h4>
 
@@ -340,8 +340,8 @@ export const OffersSection = (): JSX.Element => {
                     </div>
 
                     {/* Statutory Modules */}
-                    <div className="space-y-3.5">
-                      <h4 className="font-semibold text-sm text-[#151bb1] leading-[18px]">
+                    <div className="space-y-2 md:space-y-3.5">
+                      <h4 className="font-semibold text-xs md:text-sm text-[#151bb1] leading-tight md:leading-[18px]">
                         Statutory Modules
                       </h4>
 
@@ -350,8 +350,8 @@ export const OffersSection = (): JSX.Element => {
                   </div>
 
                   {/* Certificates */}
-                  <div className="px-12 py-6">
-                    <h4 className="font-semibold text-sm text-[#151bb1] text-center mb-6">
+                  <div className="px-4 md:px-12 py-4 md:py-6">
+                    <h4 className="font-semibold text-xs md:text-sm text-[#151bb1] text-center mb-4 md:mb-6">
                       Certificates
                     </h4>
 
@@ -369,7 +369,7 @@ export const OffersSection = (): JSX.Element => {
                     >
                       <div
                         className="flex items-center min-w-max"
-                        style={{ gap: '66px' }}
+                        style={{ gap: '36px' }}
                       >
                         {/* Duplicate certificates for infinite scroll */}
                         {Array(2).fill(0).map((_, dupIdx) => (
@@ -382,7 +382,7 @@ export const OffersSection = (): JSX.Element => {
                               aria-label={`Certificate: ${certificate}`}
                             >
                               <span
-                                className="font-medium text-sm text-[#0b1131] opacity-70 whitespace-nowrap block"
+                                className="font-medium text-xs md:text-sm text-[#0b1131] opacity-70 whitespace-nowrap block"
                                 style={{
                                   height: '20px',
                                   lineHeight: '20px',
@@ -399,20 +399,20 @@ export const OffersSection = (): JSX.Element => {
                     </div>
 
                   </div>
-                  <Separator className="mx-12 bg-[#ffc350]" />
+                  <Separator className="mx-4 md:mx-12 bg-[#ffc350]" />
 
 
                   {/* Benefits Footer */}
-                  <div className="mx-12 mt-4 mb-12">
-                    <div className="bg-[#151bb1] rounded-lg py-3 px-6">
-                      <div className="flex items-center justify-between">
+                  <div className="mx-4 md:mx-12 mt-4 mb-8 md:mt-4 md:mb-12">
+                    <div className="bg-[#151bb1] rounded-lg py-2 md:py-3 px-4 md:px-6">
+                      <div className="flex flex-col md:flex-row items-center justify-between gap-2 md:gap-0">
                         {currentCourse.benefits.map((benefit: string, index: number) => (
                           <div
                             key={`benefit-${selectedTab}-${index}`}
                             className="inline-flex items-center gap-2 transition-all duration-300 ease-in-out"
                           >
-                            <CheckCircleIcon className="w-[22px] h-[22px] text-white" />
-                            <span className="text-shadow-[0.11px_0.22px_0.22px_#00000061] font-medium text-white text-[14.2px] leading-[17.7px]">
+                            <CheckCircleIcon className="w-5 h-5 md:w-[22px] md:h-[22px] text-white" />
+                            <span className="text-shadow-[0.11px_0.22px_0.22px_#00000061] font-medium text-white text-xs md:text-[14.2px] leading-tight md:leading-[17.7px]">
                               {benefit}
                             </span>
                           </div>
