@@ -1,4 +1,3 @@
-import React from "react";
 
 export const AboutUsSection = (): JSX.Element => {
   // Content paragraphs
