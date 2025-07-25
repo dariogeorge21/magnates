@@ -42,7 +42,7 @@ export const FeaturesSection = (): JSX.Element => {
 
       {/* Hide image on mobile devices */}
       <style>{`
-        @media (max-width: 768px) {
+        @media (max-width: 1024px) {
           .features-image {
             display: none !important;
           }
