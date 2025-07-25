@@ -1,6 +1,5 @@
-import React from "react";
 import { Button } from "../../../../components/ui/button";
-import { Card, CardContent } from "../../../../components/ui/card";
+import { Card } from "../../../../components/ui/card";
 import { Checkbox } from "../../../../components/ui/checkbox";
 import { Input } from "../../../../components/ui/input";
 import { Textarea } from "../../../../components/ui/textarea";
@@ -145,8 +144,8 @@ export const FormSection = (): JSX.Element => {
                       FREE Demo
                     </label>
                   </div>
-                  <Button className="w-full py-3 md:py-4 bg-[#ffc350] hover:bg-[#ffc350]/90 rounded-[12px] text-[#0f1377] font-semibold text-base shadow-none ml-0 md:ml-[-4%] max-w-none">
-                    Submit and unlock a free Career consultation
+                  <Button className="w-full py-3 md:py-4 bg-[#ffc350] hover:bg-[#ffc350]/90 rounded-[1px] text-[#0f1377] font-semibold shadow-none md:ml-[-4%] max-w-none">
+                    Submit
                   </Button>
                 </form>
               </div>
