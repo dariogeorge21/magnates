@@ -31,7 +31,7 @@ export const FeaturesSection = (): JSX.Element => {
           </Button>
         </div>
 
-        <div className="w-full max-w-full lg:max-w-[557px] mt-8 lg:mt-0 flex justify-center">
+        <div className="w-full max-w-full lg:max-w-[557px] mt-8 lg:mt-0 flex justify-center features-image">
           <img
             className="w-full h-auto object-contain"
             alt="Industry expert teaching students image"
@@ -39,7 +39,15 @@ export const FeaturesSection = (): JSX.Element => {
           />
         </div>
       </div>
-      
+
+      {/* Hide image on mobile devices */}
+      <style>{`
+        @media (max-width: 768px) {
+          .features-image {
+            display: none !important;
+          }
+        }
+      `}</style>
     </section>
   );
 };
