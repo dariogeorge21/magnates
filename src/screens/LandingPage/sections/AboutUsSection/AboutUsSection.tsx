@@ -8,28 +8,28 @@ export const AboutUsSection = (): JSX.Element => {
   ];
 
   return (
-    <section className="relative w-full py-16 bg-white">
+    <section className="relative w-full py-10 md:py-16 bg-white">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col lg:flex-row gap-8">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-16">
           <div className="w-full lg:w-3/5">
-            <h3 className="font-['Poppins',Helvetica] font-semibold text-[#151bb1] text-2xl mb-4">
+            <h3 className="font-['Poppins',Helvetica] font-semibold text-lg md:text-2xl text-[#151bb1] mb-2 md:mb-4">
               About Us
             </h3>
 
-            <h2 className="font-['Poppins',Helvetica] font-bold text-5xl leading-[68px] mb-12">
+            <h2 className="font-['Poppins',Helvetica] font-bold text-2xl md:text-5xl leading-snug md:leading-[68px] mb-6 md:mb-12">
               <span className="text-[#0b1131]">At </span>
               <span className="text-[#151bb1]">The Magnates</span>
               <span className="text-[#0b1131]">
-                , we don&apos;t&nbsp;&nbsp;just&nbsp;&nbsp;teach : <br />
+                , we don&apos;t&nbsp;&nbsp;just&nbsp;&nbsp;teach : <br className="hidden md:block" />
                 we transform careers.
               </span>
             </h2>
 
-            <div className="space-y-8">
+            <div className="space-y-4 md:space-y-8">
               {paragraphs.map((paragraph, index) => (
                 <p
                   key={index}
-                  className="font-['Poppins',Helvetica] font-medium text-[#a0abb8] text-sm leading-7"
+                  className="font-['Poppins',Helvetica] font-medium text-xs md:text-sm text-[#a0abb8] leading-6 md:leading-7"
                 >
                   {paragraph}
                 </p>
@@ -37,9 +37,9 @@ export const AboutUsSection = (): JSX.Element => {
             </div>
           </div>
 
-          <div className="w-full lg:w-2/5 flex items-center justify-center">
+          <div className="w-full lg:w-2/5 flex items-center justify-center mt-8 lg:mt-0">
             <img
-              className="max-w-full h-auto"
+              className="max-w-full h-auto object-contain"
               alt="The Magnates illustration"
               src="https://c.animaapp.com/mc28gt7czECAIi/img/group-114.png"
             />
