@@ -45,7 +45,7 @@ export const CoursesOverviewSection = (): JSX.Element => {
             {scrollItems.map((item, index) => (
               <div key={index} className="flex items-center">
                 <img
-                  src="public/Overview.svg"
+                  src="https://res.cloudinary.com/dobqxxtml/image/upload/v1753445584/Overview_kv9coo.svg"
                   alt="Certification icon"
                   className="w-[37px] h-[37px]"
                   style={{ minWidth: 37, minHeight: 37 }}
