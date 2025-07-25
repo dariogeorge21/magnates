@@ -7,17 +7,17 @@ import { Textarea } from "../../../../components/ui/textarea";
 
 export const FormSection = (): JSX.Element => {
   return (
-    <section className="w-full bg-white py-[80px] md:py-[120px]">
-      <div className="container mx-auto px-4 max-w-[1296px]">
-        <div className="flex flex-col md:flex-row gap-32 md:gap-12 items-center justify-center">
+    <section className="w-full bg-white py-10 md:py-[80px] lg:py-[120px]">
+      <div className="container mx-auto px-4 max-w-full md:max-w-[1296px]">
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-32 items-center justify-center">
           {/* Left side with cards */}
-          <div className="w-full md:w-1/2 flex justify-center">
-            <div className="grid grid-cols-2 gap-x-8 gap-y-8 min-h-[399px]"> 
+          <div className="w-full lg:w-1/2 flex justify-center mb-8 lg:mb-0">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-8 min-h-[399px] w-full max-w-[600px]"> 
               {/* Left column: two stacked cards */}
               <div className="flex flex-col gap-8 justify-between h-full">
-                <Card className="bg-white rounded-[25.2px] shadow-[0_8px_40px_0_rgba(21,27,177,0.10)] p-8 flex flex-col items-center w-[271px] h-[220px]"> {/* 220*1.05=231, 180*1.05=189, 24*1.05=25.2 */}
+                <Card className="bg-white rounded-[25.2px] shadow-[0_8px_40px_0_rgba(21,27,177,0.10)] p-6 md:p-8 flex flex-col items-center w-full max-w-[271px] h-[220px] mx-auto"> {/* Responsive card */}
                   <div className="flex flex-col items-center">
-                    <div className="w-[77.2px] h-[77.2px] rounded-full bg-[#151bb1] flex items-center justify-center shadow-[0_0_24px_0_rgba(21,27,177,0.20)] mb-4"> {/* 64*1.05=67.2 */}
+                    <div className="w-[64px] md:w-[77.2px] h-[64px] md:h-[77.2px] rounded-full bg-[#151bb1] flex items-center justify-center shadow-[0_0_24px_0_rgba(21,27,177,0.20)] mb-4">
                     <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M15.6973 22.6289V30.1189" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
                       <path d="M19.5173 26.373H11.875" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
@@ -33,9 +33,9 @@ export const FormSection = (): JSX.Element => {
                     </div>
                   </div>
                 </Card>
-                <Card className="bg-white rounded-[25.2px] shadow-[0_8px_40px_0_rgba(21,27,177,0.10)] p-8 flex flex-col items-center w-[271px] h-[220px]">
+                <Card className="bg-white rounded-[25.2px] shadow-[0_8px_40px_0_rgba(21,27,177,0.10)] p-6 md:p-8 flex flex-col items-center w-full max-w-[271px] h-[220px] mx-auto">
                   <div className="flex flex-col items-center">
-                    <div className="w-[77.2px] h-[77.2px] rounded-full bg-[#151bb1] flex items-center justify-center shadow-[0_0_24px_0_rgba(21,27,177,0.20)] mb-4">
+                    <div className="w-[64px] md:w-[77.2px] h-[64px] md:h-[77.2px] rounded-full bg-[#151bb1] flex items-center justify-center shadow-[0_0_24px_0_rgba(21,27,177,0.20)] mb-4">
                     <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path fill-rule="evenodd" clip-rule="evenodd" d="M3.03228 6.99481C3.69822 5.89218 7.36737 1.88161 9.98572 2.00268C10.7684 2.06754 11.4603 2.54103 12.0225 3.09018C13.3133 4.35065 17.0083 9.11793 17.2181 10.1211C17.7283 12.5815 14.7965 13.9998 15.6938 16.4796C17.9813 22.0771 21.9229 26.0185 27.5228 28.3038C30.0006 29.201 31.419 26.2693 33.8795 26.7817C34.8806 26.9914 39.6503 30.6863 40.9108 31.9771C41.4578 32.537 41.9335 33.231 41.9984 34.0137C42.0957 36.7703 37.8362 40.4911 37.006 40.9668C35.0471 42.3678 32.4914 42.344 29.3758 40.8954C20.6818 37.2784 6.78791 23.6468 3.10363 14.6246C1.69391 11.5264 1.59662 8.95361 3.03228 6.99481Z" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
                       <path opacity="0.4" d="M5.96484 4.72461L9.05747 9.31198" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
@@ -51,9 +51,9 @@ export const FormSection = (): JSX.Element => {
               </div>
               {/* Right column: one centered card */}
               <div className="flex items-center h-full">
-                <Card className="bg-white rounded-[25.2px] shadow-[0_8px_40px_0_rgba(21,27,177,0.10)] p-8 flex flex-col items-center w-[271px] h-[220px] mx-auto">
+                <Card className="bg-white rounded-[25.2px] shadow-[0_8px_40px_0_rgba(21,27,177,0.10)] p-6 md:p-8 flex flex-col items-center w-full max-w-[271px] h-[220px] mx-auto">
                   <div className="flex flex-col items-center">
-                    <div className="w-[77.2px] h-[77.2px] rounded-full bg-[#151bb1] flex items-center justify-center shadow-[0_0_24px_0_rgba(21,27,177,0.20)] mb-4">
+                    <div className="w-[64px] md:w-[77.2px] h-[64px] md:h-[77.2px] rounded-full bg-[#151bb1] flex items-center justify-center shadow-[0_0_24px_0_rgba(21,27,177,0.20)] mb-4">
                     <svg width="44" height="35" viewBox="0 0 44 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path opacity="0.4" d="M33.0234 15.1544C36.1484 15.1544 38.6835 12.6212 38.6835 9.49616C38.6835 6.37115 36.1484 3.83789 33.0234 3.83789" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
                       <path d="M35.625 21.3027C36.5582 21.3671 37.4861 21.4994 38.3996 21.705C39.6689 21.9535 41.1957 22.4737 41.7391 23.6125C42.086 24.3419 42.086 25.1911 41.7391 25.9223C41.1975 27.0611 39.6689 27.5796 38.3996 27.8406" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
@@ -74,15 +74,15 @@ export const FormSection = (): JSX.Element => {
           </div>
 
           {/* Right side with form */}
-          <div className="w-full md:w-1/2 flex flex-col items-center md:items-end">
-            <div className="w-full max-w-[494px] scale-[1.03]"> {/* 480*1.03=494.4 */}
-              <h3 className="text-[#151bb1] font-semibold text-lg md:text-xl mb-2">Contact Us</h3>
-              <h2 className="text-[#0b1131] font-extrabold text-4xl md:text-5xl leading-tight mb-4">Get in touch</h2>
-              <p className="text-[#a0abb8] font-medium text-base mb-8">
+          <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-end">
+            <div className="w-full max-w-full md:max-w-[494px] scale-100 md:scale-[1.03]">
+              <h3 className="text-[#151bb1] font-semibold text-base md:text-lg lg:text-xl mb-2">Contact Us</h3>
+              <h2 className="text-[#0b1131] font-extrabold text-2xl md:text-4xl lg:text-5xl leading-tight mb-4">Get in touch</h2>
+              <p className="text-[#a0abb8] font-medium text-sm md:text-base mb-8">
                 Feel free to contact us at any time, we will get back to you as soon as possible. Get started in just 30 seconds.
               </p>
-              <div className="bg-white rounded-[24px] shadow-[0_8px_40px_0_rgba(21,27,177,0.10)] p-8 md:p-9">
-                <form className="flex flex-col gap-5">
+              <div className="bg-white rounded-[24px] shadow-[0_8px_40px_0_rgba(21,27,177,0.10)] p-6 md:p-8 lg:p-9">
+                <form className="flex flex-col gap-4 md:gap-5">
                   <div>
                     <label htmlFor="name" className="block text-sm font-semibold text-[#0f001a] mb-1">
                       Name<span className="text-red-500">*</span>
@@ -145,7 +145,7 @@ export const FormSection = (): JSX.Element => {
                       FREE Demo
                     </label>
                   </div>
-                  <Button className="w-[108%] max-w-none py-4 bg-[#ffc350] hover:bg-[#ffc350]/90 rounded-[12px] text-[#0f1377] font-semibold text-base shadow-none ml-[-4%]">
+                  <Button className="w-full py-3 md:py-4 bg-[#ffc350] hover:bg-[#ffc350]/90 rounded-[12px] text-[#0f1377] font-semibold text-base shadow-none ml-0 md:ml-[-4%] max-w-none">
                     Submit and unlock a free Career consultation
                   </Button>
                 </form>
