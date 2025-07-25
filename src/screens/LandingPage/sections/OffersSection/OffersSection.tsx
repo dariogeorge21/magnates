@@ -292,7 +292,7 @@ export const OffersSection = (): JSX.Element => {
               {/* Background Effect */}
               <div
                 className="relative min-h-[500px] md:min-h-[600px] bg-cover bg-center bg-no-repeat"
-                style={{ backgroundImage: 'url(/bg-effect-3.png)' }}
+                style={{ backgroundImage: 'url(public/bg-effect-3.png)' }}
               >
 
                 <div className="absolute inset-0">
