@@ -330,17 +330,11 @@ export const HeaderSection = ({
         {/* Left Content Block */}
         <div
           className="lg:w-1/2 mb-12 lg:mb-0 relative z-20 hero-overlap lg:min-h-[280px]"
-          style={{
-            transform: 'translateX(-120px)',
-            marginRight: '100px',
-            width: '800px',         
-            maxWidth: '800px',      
-            minHeight: '280px' 
-          }}
+          
         >
           <h1
             className="font-bold text-white leading-tight mb-8 text-5xl hero-title"
-            style={{ fontSize: '56px' }}
+            style={{ fontSize: '60px' }}
           >
             {title.split('\n').map((line, index) => (
               <span key={index}>
@@ -385,7 +379,7 @@ export const HeaderSection = ({
       {/* Fixed Positioned Decorative Elements */}
       {/* CoinRight component - Fixed at 103.4px from right, 471.27px from bottom */}
       <div
-        className="pointer-events-none z-15 animate-float"
+        className="pointer-events-none z-15 animate-float decorative-coin-right"
         style={{
           position: 'absolute',
           right: '143px',
@@ -399,7 +393,7 @@ export const HeaderSection = ({
 
       {/* CoinLeft component - Fixed at 691.64px from left, 56px from bottom */}
       <div
-        className="pointer-events-none z-15 animate-float-delayed"
+        className="pointer-events-none z-15 animate-float-delayed decorative-coin-left"
         style={{
           position: 'absolute',
           left: '900px',
@@ -413,7 +407,7 @@ export const HeaderSection = ({
 
       {/* Star component - Fixed at 55.08px from right, 277.69px from bottom with dimensions 66.92px × 70.31px */}
       <div
-        className="pointer-events-none z-20 animate-float"
+        className="pointer-events-none z-20 animate-float decorative-star"
         style={{
           position: 'absolute',
           right: '155px',
@@ -428,7 +422,7 @@ export const HeaderSection = ({
 
       {/* Small Circle component - Fixed at 568.44px from right, 563.43px from bottom */}
       <div
-        className="pointer-events-none z-15"
+        className="pointer-events-none z-15 decorative-small-circle"
         style={{
           position: 'absolute',
           right: '918px',
@@ -502,6 +496,19 @@ export const HeaderSection = ({
             width: 250px !important;
             height: 295px !important;
             margin: 1rem auto 0 auto !important;
+          }
+        }
+
+        /* Hide decorative elements on mobile devices */
+        @media (max-width: 1114px) {
+          .hero-image {
+            display: none !important;
+          }
+          .decorative-coin-left,
+          .decorative-coin-right,
+          .decorative-star,
+          .decorative-small-circle {
+            display: none !important;
           }
         }
       `}</style>
