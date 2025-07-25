@@ -72,7 +72,7 @@ export const CoursesOverviewSection = (): JSX.Element => {
               scrollItems.map((item, index) => (
                 <div key={`scrollitem-${dupIdx}-${index}-${item}`} className="flex items-center">
                   <img
-                    src="/public/Overview.svg"
+                    src="/Overview.svg"
                     alt="Certification icon"
                     className="w-[37px] h-[37px]"
                     style={{ minWidth: 37, minHeight: 37 }}
