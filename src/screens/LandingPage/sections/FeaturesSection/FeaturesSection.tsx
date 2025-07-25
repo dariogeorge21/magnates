@@ -33,8 +33,8 @@ export const FeaturesSection = (): JSX.Element => {
 
         <div className="mt-10 lg:mt-0">
           <img
-            className="w-full max-w-[557px] h-auto"
-            alt="Industry expert teaching students"
+            className="w-full max-w-[557px] h-auto scale-[1.05]"
+            alt="Industry expert teaching students image"
             src="https://c.animaapp.com/mc28gt7czECAIi/img/group-115.png"
           />
         </div>
