@@ -266,12 +266,10 @@ export const OffersSection = (): JSX.Element => {
           <Card className="w-full rounded-lg shadow-[0px_10px_100px_10px_#0000001a] relative overflow-hidden">
             <CardContent className="p-0">
               {/* Background Effect */}
-              <div className="relative">
-                <img
-                  className="w-full h-auto"
-                  alt="Background effect"
-                  src="https://c.animaapp.com/mc28gt7czECAIi/img/bg-effect-1.png"
-                />
+              <div
+                className="relative min-h-[600px] bg-cover bg-center bg-no-repeat"
+                style={{ backgroundImage: 'url(/public/bg-effect-3.png)' }}
+              >
 
                 <div className="absolute inset-0">
                   {/* Course Header */}
