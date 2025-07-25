@@ -27,6 +27,8 @@ export const LandingPage = (): JSX.Element => {
           <HeaderSection/>
           {/* OverlapWrapperSubsect - Courses Overview Section */}
         <CoursesOverviewSection />
+
+        {/* About Us Section */}
           <AboutUsSection />
           
 
@@ -36,6 +38,7 @@ export const LandingPage = (): JSX.Element => {
               Enroll to become a Magnate
             </Button>
           </div>
+          {/* Courses Overview Section */}
           <OffersSection />
 
           
