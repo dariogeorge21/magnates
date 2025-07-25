@@ -11,9 +11,9 @@ export const FeaturesSection = (): JSX.Element => {
           </span>
 
           <h2 className="font-bold text-white text-2xl md:text-5xl leading-snug md:leading-[68px] mb-4 md:mb-8">
-            Learn from
+            Learn from the best
             <br className="hidden md:block" />
-            the best
+            
           </h2>
 
           <p className="font-medium text-[#b8c5d5] text-sm md:text-base leading-6 md:leading-7 mb-6 md:mb-10">
