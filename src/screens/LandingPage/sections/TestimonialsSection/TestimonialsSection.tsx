@@ -86,78 +86,71 @@ export const TestimonialsSection = (): JSX.Element => {
 
   return (
     <section
-  className="w-full py-16 bg-white bg-opacity-20 relative"
-  aria-labelledby="services-heading"
->
-  <div className="container mx-auto px-4">
-    {/* Section Header */}
-    <div className="text-center mb-16">
-      <h3 className="font-semibold text-2xl text-[#151bb1] font-['Poppins',Helvetica] mb-4">
-        Our Services
-      </h3>
-      <h2
-        id="services-heading"
-        className="font-bold text-5xl text-[#0b1131] font-['Poppins',Helvetica] leading-[68px]"
-      >
-        DISCOVER THE MAGNATE MAGIC
-      </h2>
-    </div>
-
-    {/* Services Grid - Using 6-column layout for better control */}
-    <div className="grid grid-cols-6 gap-7 justify-items-center">
-      {serviceCards.map((card, index) => (
-        <article 
-          key={card.id} 
-          className={`relative ${
-            // First 3 cards span 2 columns each
-            index < 3 ? 'col-span-2' : 
-            // Last 2 cards: 4th card starts at column 2, 5th card starts at column 4
-            index === 3 ? 'col-start-2 col-span-2' :
-            index === 4 ? 'col-start-4 col-span-2' : ''
-          }`}
-        >
-          <Card
-            className={`${card.bgColor} rounded-lg shadow-[0px_10px_100px_10px_#0000001a] relative overflow-hidden`}
-            style={{ width: "385px", height: "444px" }}
-            role="article"
-            aria-labelledby={`card-title-${card.id}`}
+      className="w-full py-10 md:py-16 bg-white bg-opacity-20 relative"
+      aria-labelledby="services-heading"
+    >
+      <div className="container mx-auto px-4">
+        {/* Section Header */}
+        <div className="text-center mb-8 md:mb-16">
+          <h3 className="font-semibold text-lg md:text-2xl text-[#151bb1] font-['Poppins',Helvetica] mb-2 md:mb-4">
+            Our Services
+          </h3>
+          <h2
+            id="services-heading"
+            className="font-bold text-2xl md:text-5xl text-[#0b1131] font-['Poppins',Helvetica] leading-snug md:leading-[68px]"
           >
-            <div className="relative w-full h-full">
-              {/* Background Image */}
-              <img
-                className="absolute inset-0 w-full h-full object-cover"
-                alt={card.bgImageAlt}
-                src={card.bgImageSrc}
-                style={{ width: "385px", height: "444px" }}
-              />
+            DISCOVER THE MAGNATE MAGIC
+          </h2>
+        </div>
 
-              {/* Card Content */}
-              <CardContent className="relative z-10 flex flex-col items-center justify-center h-full pt-16">
-                <div className="flex justify-center mb-8">
+        {/* Responsive Cards Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 justify-items-center max-w-[1296px] mx-auto">
+          {serviceCards.map((card) => (
+            <article
+              key={card.id}
+              className="w-full flex justify-center"
+            >
+              <Card
+                className={`${card.bgColor} rounded-lg shadow-[0px_10px_100px_10px_#0000001a] relative overflow-hidden flex flex-col items-center justify-center`}
+                style={{ width: '340px', height: '420px', minWidth: '340px', minHeight: '420px', maxWidth: '340px', maxHeight: '420px' }}
+                role="article"
+                aria-labelledby={`card-title-${card.id}`}
+              >
+                <div className="relative w-full h-full flex flex-col items-center justify-center">
+                  {/* Background Image */}
                   <img
-                    src={card.iconSrc}
-                    alt={card.iconAlt}
-                    className="w-auto h-auto"
+                    className="absolute inset-0 w-full h-full object-cover rounded-lg"
+                    alt={card.bgImageAlt}
+                    src={card.bgImageSrc}
                   />
+
+                  {/* Card Content */}
+                  <CardContent className="relative z-10 flex flex-col items-center justify-center h-full pt-10 md:pt-16">
+                    <div className="flex justify-center mb-4 md:mb-8">
+                      <img
+                        src={card.iconSrc}
+                        alt={card.iconAlt}
+                        className="w-12 h-12 md:w-auto md:h-auto"
+                      />
+                    </div>
+                    <h3
+                      id={`card-title-${card.id}`}
+                      className={`${card.textColor} font-bold text-lg md:text-2xl text-center font-['Poppins',Helvetica] mb-3 md:mb-6 px-2 md:px-4`}
+                    >
+                      {card.title}
+                    </h3>
+                    <p
+                      className={`${card.textColor} ${card.descriptionOpacity} font-medium text-xs md:text-sm text-center font-['Poppins',Helvetica] leading-6 md:leading-7 max-w-[220px] md:max-w-[293px]`}
+                    >
+                      {card.description}
+                    </p>
+                  </CardContent>
                 </div>
-                <h3
-                  id={`card-title-${card.id}`}
-                  className={`${card.textColor} font-bold text-2xl text-center font-['Poppins',Helvetica] mb-6 px-4`}
-                >
-                  {card.title}
-                </h3>
-                <p
-                  className={`${card.textColor} ${card.descriptionOpacity} font-medium text-sm text-center font-['Poppins',Helvetica] leading-7 max-w-[293px]`}
-                >
-                  {card.description}
-                </p>
-              </CardContent>
-            </div>
-          </Card>
-        </article>
-      ))}
-    </div>
-  </div>
-</section>
+              </Card>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 };
