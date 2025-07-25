@@ -8,7 +8,7 @@ export const AboutUsSection = (): JSX.Element => {
   ];
 
   return (
-    <section className="relative w-full py-10 md:py-16 bg-white">
+    <section id="about-us" className="relative w-full py-10 md:py-16 bg-white">
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-16">
           <div className="w-full lg:w-3/5">

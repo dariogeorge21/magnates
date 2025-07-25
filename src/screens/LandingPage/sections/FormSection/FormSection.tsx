@@ -6,7 +6,7 @@ import { Textarea } from "../../../../components/ui/textarea";
 
 export const FormSection = (): JSX.Element => {
   return (
-    <section className="w-full bg-white py-10 md:py-[80px] lg:py-[120px]">
+    <section id="form-section" className="w-full bg-white py-10 md:py-[80px] lg:py-[120px]">
       <div className="container mx-auto px-4 max-w-full md:max-w-[1296px]">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-32 items-center justify-center">
           {/* Left side with cards */}
