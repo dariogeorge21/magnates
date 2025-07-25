@@ -1,5 +1,6 @@
 import { Card, CardContent } from "../../../../components/ui/card";
 import { Separator } from "../../../../components/ui/separator";
+import { useRef, useEffect } from "react";
 
 export const CoursesOverviewSection = (): JSX.Element => {
   // Data for certification items
@@ -9,6 +10,29 @@ export const CoursesOverviewSection = (): JSX.Element => {
     "Course Completion Certification",
     "Government Accredited"
   ];
+
+  // Ref for scroll area
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  // Infinite auto-scroll (marquee effect)
+  useEffect(() => {
+    const scrollEl = scrollRef.current;
+    if (!scrollEl) return;
+    let frameId: number;
+    let speed = 0.5; // px per frame, adjust for slower/faster
+
+    function animate() {
+      if (!scrollEl) return;
+      if (scrollEl.scrollLeft >= scrollEl.scrollWidth / 2) {
+        scrollEl.scrollLeft = 0;
+      } else {
+        scrollEl.scrollLeft += speed;
+      }
+      frameId = requestAnimationFrame(animate);
+    }
+    frameId = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(frameId);
+  }, []);
 
   return (
     <section className="w-full h-[223px] bg-white py-16">
@@ -31,37 +55,41 @@ export const CoursesOverviewSection = (): JSX.Element => {
         </Card>
 
         <div
+          ref={scrollRef}
           className="w-full max-w-[calc(100%-322px)] ml-4 overflow-x-scroll scrollbar-hide"
           tabIndex={0}
           aria-label="Certifications overview scroll area"
           style={{
             WebkitOverflowScrolling: "touch",
-            scrollBehavior: "smooth",
+            scrollBehavior: "auto",
             scrollbarWidth: "none",
             msOverflowStyle: "none"
           }}
         >
           <div className="flex items-center gap-[60px] py-4 min-w-max">
-            {scrollItems.map((item, index) => (
-              <div key={index} className="flex items-center">
-                <img
-                  src="https://res.cloudinary.com/dobqxxtml/image/upload/v1753445584/Overview_kv9coo.svg"
-                  alt="Certification icon"
-                  className="w-[37px] h-[37px]"
-                  style={{ minWidth: 37, minHeight: 37 }}
-                  aria-hidden="true"
-                />
-                <span className="text-[24px] font-medium text-[#909090] whitespace-nowrap ml-2">
-                  {item}
-                </span>
-                {index !== scrollItems.length - 1 && (
-                  <span className="text-[48px] text-[#909090] m-12 w-[1px]">
-                    <svg width="2" height="65" viewBox="0 0 2 65" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1 0L0.999997 65" stroke="#909090"/>
-                    </svg>
+            {/* Duplicate scrollItems for infinite scroll */}
+            {Array(2).fill(0).map((_, dupIdx) => (
+              scrollItems.map((item, index) => (
+                <div key={`scrollitem-${dupIdx}-${index}-${item}`} className="flex items-center">
+                  <img
+                    src="/public/Overview.svg"
+                    alt="Certification icon"
+                    className="w-[37px] h-[37px]"
+                    style={{ minWidth: 37, minHeight: 37 }}
+                    aria-hidden="true"
+                  />
+                  <span className="text-[24px] font-medium text-[#909090] whitespace-nowrap ml-2">
+                    {item}
                   </span>
-                )}
-              </div>
+                  {index !== scrollItems.length - 1 && (
+                    <span className="text-[48px] text-[#909090] m-12 w-[1px]">
+                      <svg width="2" height="65" viewBox="0 0 2 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M1 0L0.999997 65" stroke="#909090"/>
+                      </svg>
+                    </span>
+                  )}
+                </div>
+              ))
             ))}
           </div>
         </div>
