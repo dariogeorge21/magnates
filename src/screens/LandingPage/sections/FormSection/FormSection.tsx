@@ -7,134 +7,149 @@ import { Textarea } from "../../../../components/ui/textarea";
 
 export const FormSection = (): JSX.Element => {
   return (
-    <section className="w-full bg-white py-16">
+    <section className="w-full bg-white py-[80px] md:py-[120px]">
       <div className="container mx-auto px-4 max-w-[1296px]">
-        <div className="flex flex-col md:flex-row gap-12">
+        <div className="flex flex-col md:flex-row gap-32 md:gap-12 items-center justify-center">
           {/* Left side with cards */}
-          <div className="w-full md:w-1/2 flex flex-col gap-8">
-            <div className="text-center md:text-left">
-              <h3 className="text-[#151bb1] font-semibold text-2xl mb-2">Contact Us</h3><br />
-              <h2 className="text-[#0b1131] font-bold text-5xl mb-4">Get in touch</h2><br />
-              <p className="text-[#a0abb8] font-medium text-sm">
-                Feel free to contact us at any time, we will get back to you as
-                soon as possible. Get started in just 30 seconds.
-              </p>
-            </div>
+          <div className="w-full md:w-1/2 flex justify-center">
+            <div className="grid grid-cols-2 gap-x-8 gap-y-8 min-h-[399px]"> 
+              {/* Left column: two stacked cards */}
+              <div className="flex flex-col gap-8 justify-between h-full">
+                <Card className="bg-white rounded-[25.2px] shadow-[0_8px_40px_0_rgba(21,27,177,0.10)] p-8 flex flex-col items-center w-[271px] h-[220px]"> {/* 220*1.05=231, 180*1.05=189, 24*1.05=25.2 */}
+                  <div className="flex flex-col items-center">
+                    <div className="w-[77.2px] h-[77.2px] rounded-full bg-[#151bb1] flex items-center justify-center shadow-[0_0_24px_0_rgba(21,27,177,0.20)] mb-4"> {/* 64*1.05=67.2 */}
+                    <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M15.6973 22.6289V30.1189" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M19.5173 26.373H11.875" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M28.7316 22.8555H28.5176" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M32.3586 30.0059H32.1445" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path opacity="0.4" d="M14.1445 2C14.1445 3.48097 15.3695 4.68152 16.8806 4.68152H18.9935C21.3248 4.68983 23.2131 6.54052 23.2237 8.82532V10.1754" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M30.8566 41.9245C24.8462 42.0263 18.9461 42.0222 13.1455 41.9245C6.707 41.9245 2 37.3321 2 31.0219V21.7227C2 15.4125 6.707 10.8201 13.1455 10.8201C18.9779 10.7204 24.8823 10.7225 30.8566 10.8201C37.2951 10.8201 42 15.4146 42 21.7227V31.0219C42 37.3321 37.2951 41.9245 30.8566 41.9245Z" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <Card className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center">
-                <div className="w-16 h-16 bg-[#5b3dfc] rounded-full flex items-center justify-center mb-4">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M9 22H15C20 22 22 20 22 15V9C22 4 20 2 15 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22Z" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M9 10C10.1046 10 11 9.10457 11 8C11 6.89543 10.1046 6 9 6C7.89543 6 7 6.89543 7 8C7 9.10457 7.89543 10 9 10Z" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M2.67 18.95L7.6 15.64C8.39 15.11 9.53 15.17 10.24 15.78L10.57 16.07C11.35 16.74 12.61 16.74 13.39 16.07L17.55 12.5C18.33 11.83 19.59 11.83 20.37 12.5L22 13.9" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </div>
-                <h3 className="text-[#0b1131] font-bold text-xl mb-1">Innovative Classes</h3>
-              </Card>
+                    </div>
+                    <div className="text-center">
+                      <div className="font-bold text-lg text-[#0b1131] leading-tight">Innovative<br />Classes</div>
+                    </div>
+                  </div>
+                </Card>
+                <Card className="bg-white rounded-[25.2px] shadow-[0_8px_40px_0_rgba(21,27,177,0.10)] p-8 flex flex-col items-center w-[271px] h-[220px]">
+                  <div className="flex flex-col items-center">
+                    <div className="w-[77.2px] h-[77.2px] rounded-full bg-[#151bb1] flex items-center justify-center shadow-[0_0_24px_0_rgba(21,27,177,0.20)] mb-4">
+                    <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M3.03228 6.99481C3.69822 5.89218 7.36737 1.88161 9.98572 2.00268C10.7684 2.06754 11.4603 2.54103 12.0225 3.09018C13.3133 4.35065 17.0083 9.11793 17.2181 10.1211C17.7283 12.5815 14.7965 13.9998 15.6938 16.4796C17.9813 22.0771 21.9229 26.0185 27.5228 28.3038C30.0006 29.201 31.419 26.2693 33.8795 26.7817C34.8806 26.9914 39.6503 30.6863 40.9108 31.9771C41.4578 32.537 41.9335 33.231 41.9984 34.0137C42.0957 36.7703 37.8362 40.4911 37.006 40.9668C35.0471 42.3678 32.4914 42.344 29.3758 40.8954C20.6818 37.2784 6.78791 23.6468 3.10363 14.6246C1.69391 11.5264 1.59662 8.95361 3.03228 6.99481Z" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path opacity="0.4" d="M5.96484 4.72461L9.05747 9.31198" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path opacity="0.4" d="M34.3457 34.7715L38.952 38.3715" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
 
-              <Card className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center">
-                <div className="w-16 h-16 bg-[#5b3dfc] rounded-full flex items-center justify-center mb-4">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M17.45 10.5C17.45 10.5 14.52 14.2 12 14.2C9.48 14.2 6.55 10.5 6.55 10.5" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </div>
-                <h3 className="text-[#0b1131] font-bold text-xl mb-1">24/7 Support</h3>
-              </Card>
+                    </div>
+                    <div className="text-center">
+                      <div className="font-bold text-lg text-[#0b1131] leading-tight">24/7<br />Support</div>
+                    </div>
+                  </div>
+                </Card>
+              </div>
+              {/* Right column: one centered card */}
+              <div className="flex items-center h-full">
+                <Card className="bg-white rounded-[25.2px] shadow-[0_8px_40px_0_rgba(21,27,177,0.10)] p-8 flex flex-col items-center w-[271px] h-[220px] mx-auto">
+                  <div className="flex flex-col items-center">
+                    <div className="w-[77.2px] h-[77.2px] rounded-full bg-[#151bb1] flex items-center justify-center shadow-[0_0_24px_0_rgba(21,27,177,0.20)] mb-4">
+                    <svg width="44" height="35" viewBox="0 0 44 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path opacity="0.4" d="M33.0234 15.1544C36.1484 15.1544 38.6835 12.6212 38.6835 9.49616C38.6835 6.37115 36.1484 3.83789 33.0234 3.83789" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M35.625 21.3027C36.5582 21.3671 37.4861 21.4994 38.3996 21.705C39.6689 21.9535 41.1957 22.4737 41.7391 23.6125C42.086 24.3419 42.086 25.1911 41.7391 25.9223C41.1975 27.0611 39.6689 27.5796 38.3996 27.8406" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path opacity="0.4" d="M10.9765 15.1544C7.85145 15.1544 5.31641 12.6212 5.31641 9.49616C5.31641 6.37115 7.85145 3.83789 10.9765 3.83789" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M8.37382 21.3027C7.4406 21.3671 6.51276 21.4994 5.59921 21.705C4.3299 21.9535 2.80315 22.4737 2.26146 23.6125C1.91285 24.3419 1.91285 25.1911 2.26146 25.9223C2.80136 27.0611 4.3299 27.5796 5.59921 27.8406" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M21.992 22.5215C28.3243 22.5215 33.734 23.4797 33.734 27.3145C33.734 31.1474 28.36 32.1414 21.992 32.1414C15.658 32.1414 10.25 31.1832 10.25 27.3484C10.25 23.5137 15.624 22.5215 21.992 22.5215Z" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path opacity="0.4" fill-rule="evenodd" clip-rule="evenodd" d="M21.9895 17.0512C17.8133 17.0512 14.4648 13.7027 14.4648 9.52469C14.4648 5.34848 17.8133 2 21.9895 2C26.1657 2 29.5142 5.34848 29.5142 9.52469C29.5142 13.7027 26.1657 17.0512 21.9895 17.0512Z" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
 
-              <Card className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center md:col-span-2 md:mx-auto md:w-1/2">
-                <div className="w-16 h-16 bg-[#5b3dfc] rounded-full flex items-center justify-center mb-4">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M18 7.16C17.94 7.15 17.87 7.15 17.81 7.16C16.43 7.11 15.33 5.98 15.33 4.58C15.33 3.15 16.48 2 17.91 2C19.34 2 20.49 3.16 20.49 4.58C20.48 5.98 19.38 7.11 18 7.16Z" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M16.97 14.44C18.34 14.67 19.85 14.43 20.91 13.72C22.32 12.78 22.32 11.24 20.91 10.3C19.84 9.59 18.31 9.35 16.94 9.59" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M5.97 7.16C6.03 7.15 6.1 7.15 6.16 7.16C7.54 7.11 8.64 5.98 8.64 4.58C8.64 3.15 7.49 2 6.06 2C4.63 2 3.48 3.16 3.48 4.58C3.49 5.98 4.59 7.11 5.97 7.16Z" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M7 14.44C5.63 14.67 4.12 14.43 3.06 13.72C1.65 12.78 1.65 11.24 3.06 10.3C4.13 9.59 5.66 9.35 7.03 9.59" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M12 14.63C11.94 14.62 11.87 14.62 11.81 14.63C10.43 14.58 9.33 13.45 9.33 12.05C9.33 10.62 10.48 9.47 11.91 9.47C13.34 9.47 14.49 10.63 14.49 12.05C14.48 13.45 13.38 14.59 12 14.63Z" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M9.09 17.78C7.68 18.72 7.68 20.26 9.09 21.2C10.69 22.27 13.31 22.27 14.91 21.2C16.32 20.26 16.32 18.72 14.91 17.78C13.32 16.72 10.69 16.72 9.09 17.78Z" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </div>
-                <h3 className="text-[#0b1131] font-bold text-xl mb-1">Professional Team</h3>
-              </Card>
+                    </div>
+                    <div className="text-center">
+                      <div className="font-bold text-lg text-[#0b1131] leading-tight">Professional<br />Team</div>
+                    </div>
+                  </div>
+                </Card>
+              </div>
             </div>
           </div>
 
           {/* Right side with form */}
-          <div className="w-full md:w-1/2">
-            <div className="bg-white rounded-lg shadow-lg p-6">
-              <form className="flex flex-col gap-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-[#0f001a] mb-1">
-                    Name<span className="text-red-500">*</span>
-                  </label>
-                  <Input 
-                    id="name" 
-                    placeholder="First_Name Last_Name" 
-                    className="w-full border-[#acb5c1] rounded-lg p-3" 
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="age" className="block text-sm font-medium text-[#0f001a] mb-1">
-                    Age<span className="text-red-500">*</span>
-                  </label>
-                  <Input 
-                    id="age" 
-                    placeholder="" 
-                    className="w-full border-[#acb5c1] rounded-lg p-3" 
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="qualifications" className="block text-sm font-medium text-[#0f001a] mb-1">
-                    Qualifications<span className="text-red-500">*</span>
-                  </label>
-                  <Input 
-                    id="qualifications" 
-                    placeholder="" 
-                    className="w-full border-[#acb5c1] rounded-lg p-3" 
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-[#0f001a] mb-1">
-                    Phone<span className="text-red-500">*</span>
-                  </label>
-                  <Input 
-                    id="phone" 
-                    placeholder="" 
-                    className="w-full border-[#acb5c1] rounded-lg p-3" 
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-[#0f001a] mb-1">
-                    Your Message
-                  </label>
-                  <Textarea 
-                    id="message" 
-                    placeholder="" 
-                    className="w-full border-[#acb5c1] rounded-lg p-3 min-h-[126px]" 
-                  />
-                </div>
-                
-                <div className="flex items-center gap-2">
-                  <Checkbox
-                    id="demo"
-                    className="w-5 h-5 rounded border border-solid border-[#a0abb8]"
-                  />
-                  <label
-                    htmlFor="demo"
-                    className="text-[#0f001a] font-medium text-sm"
-                  >
-                    FREE Demo
-                  </label>
-                </div>
-                
-                <Button className="w-full py-3 bg-[#ffc350] hover:bg-[#ffc350]/90 rounded text-[#0f1377] font-semibold">
-                  Submit and unlock a free Career consultation
-                </Button>
-              </form>
+          <div className="w-full md:w-1/2 flex flex-col items-center md:items-end">
+            <div className="w-full max-w-[494px] scale-[1.03]"> {/* 480*1.03=494.4 */}
+              <h3 className="text-[#151bb1] font-semibold text-lg md:text-xl mb-2">Contact Us</h3>
+              <h2 className="text-[#0b1131] font-extrabold text-4xl md:text-5xl leading-tight mb-4">Get in touch</h2>
+              <p className="text-[#a0abb8] font-medium text-base mb-8">
+                Feel free to contact us at any time, we will get back to you as soon as possible. Get started in just 30 seconds.
+              </p>
+              <div className="bg-white rounded-[24px] shadow-[0_8px_40px_0_rgba(21,27,177,0.10)] p-8 md:p-9">
+                <form className="flex flex-col gap-5">
+                  <div>
+                    <label htmlFor="name" className="block text-sm font-semibold text-[#0f001a] mb-1">
+                      Name<span className="text-red-500">*</span>
+                    </label>
+                    <Input 
+                      id="name" 
+                      placeholder="First_Name Last_Name" 
+                      className="w-full border border-[#e3e7ed] rounded-[12px] p-3 text-base font-medium focus:ring-2 focus:ring-[#151bb1]/20 focus:border-[#151bb1] transition" 
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="age" className="block text-sm font-semibold text-[#0f001a] mb-1">
+                      Age<span className="text-red-500">*</span>
+                    </label>
+                    <Input 
+                      id="age" 
+                      placeholder="" 
+                      className="w-full border border-[#e3e7ed] rounded-[12px] p-3 text-base font-medium focus:ring-2 focus:ring-[#151bb1]/20 focus:border-[#151bb1] transition" 
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="qualifications" className="block text-sm font-semibold text-[#0f001a] mb-1">
+                      Qualifications<span className="text-red-500">*</span>
+                    </label>
+                    <Input 
+                      id="qualifications" 
+                      placeholder="" 
+                      className="w-full border border-[#e3e7ed] rounded-[12px] p-3 text-base font-medium focus:ring-2 focus:ring-[#151bb1]/20 focus:border-[#151bb1] transition" 
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="phone" className="block text-sm font-semibold text-[#0f001a] mb-1">
+                      Phone<span className="text-red-500">*</span>
+                    </label>
+                    <Input 
+                      id="phone" 
+                      placeholder="" 
+                      className="w-full border border-[#e3e7ed] rounded-[12px] p-3 text-base font-medium focus:ring-2 focus:ring-[#151bb1]/20 focus:border-[#151bb1] transition" 
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="message" className="block text-sm font-semibold text-[#0f001a] mb-1">
+                      Your Message
+                    </label>
+                    <Textarea 
+                      id="message" 
+                      placeholder="" 
+                      className="w-full border border-[#e3e7ed] rounded-[12px] p-3 min-h-[126px] text-base font-medium focus:ring-2 focus:ring-[#151bb1]/20 focus:border-[#151bb1] transition" 
+                    />
+                  </div>
+                  <div className="flex items-center gap-2 mt-1">
+                    <Checkbox
+                      id="demo"
+                      className="w-5 h-5 rounded border border-solid border-[#a0abb8]"
+                    />
+                    <label
+                      htmlFor="demo"
+                      className="text-[#0f001a] font-medium text-sm select-none"
+                    >
+                      FREE Demo
+                    </label>
+                  </div>
+                  <Button className="w-[108%] max-w-none py-4 bg-[#ffc350] hover:bg-[#ffc350]/90 rounded-[12px] text-[#0f1377] font-semibold text-base shadow-none ml-[-4%]">
+                    Submit and unlock a free Career consultation
+                  </Button>
+                </form>
+              </div>
             </div>
           </div>
         </div>
