@@ -5,7 +5,7 @@ import {
   ToggleGroup,
   ToggleGroupItem,
 } from "../../../../components/ui/toggle-group";
-import { useState } from "react";
+import { useRef, useEffect, useState } from "react";
 
 // TypeScript interfaces for type safety
 interface CourseContent {
@@ -160,6 +160,30 @@ const ProgramHighlightsList = ({ items }: { items: string[] }) => {
 export const OffersSection = (): JSX.Element => {
   // State management for tab switching
   const [selectedTab, setSelectedTab] = useState<TabValue>("6months");
+
+  // Ref for certificates scroll area
+  const certificatesScrollRef = useRef<HTMLDivElement>(null);
+
+  // Infinite auto-scroll (marquee effect)
+  useEffect(() => {
+    const scrollEl = certificatesScrollRef.current;
+    if (!scrollEl) return;
+    let frameId: number;
+    let speed = 0.5; // px per frame, adjust for slower/faster
+
+    function animate() {
+      if (!scrollEl) return;
+      // If we've scrolled past the first set, reset to start
+      if (scrollEl.scrollLeft >= scrollEl.scrollWidth / 2) {
+        scrollEl.scrollLeft = 0;
+      } else {
+        scrollEl.scrollLeft += speed;
+      }
+      frameId = requestAnimationFrame(animate);
+    }
+    frameId = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(frameId);
+  }, [selectedTab]);
 
   // Get current course data based on selected tab
   const currentCourse = courseData[selectedTab];
@@ -333,12 +357,13 @@ export const OffersSection = (): JSX.Element => {
 
                     {/* Horizontal Scrollable Certificates Display */}
                     <div
+                      ref={certificatesScrollRef}
                       className="overflow-x-auto overflow-y-hidden scrollbar-hide transition-all duration-300"
                       role="region"
                       aria-label="Certificates showcase"
                       tabIndex={0}
                       style={{
-                        scrollBehavior: 'smooth',
+                        scrollBehavior: 'auto',
                         WebkitOverflowScrolling: 'touch'
                       }}
                     >
@@ -346,26 +371,29 @@ export const OffersSection = (): JSX.Element => {
                         className="flex items-center min-w-max"
                         style={{ gap: '66px' }}
                       >
-                        {currentCourse.certificates.map((certificate: string, index: number) => (
-                          <div
-                            key={`certificate-${selectedTab}-${index}`}
-                            className="flex-shrink-0 text-center focus:outline-none focus:ring-2 focus:ring-[#151bb1] focus:ring-offset-2 rounded-md px-2 py-1 transition-all duration-300 ease-in-out"
-                            tabIndex={0}
-                            role="button"
-                            aria-label={`Certificate: ${certificate}`}
-                          >
-                            <span
-                              className="font-medium text-sm text-[#0b1131] opacity-70 whitespace-nowrap block"
-                              style={{
-                                height: '20px',
-                                lineHeight: '20px',
-                                overflow: 'hidden',
-                                textOverflow: 'ellipsis'
-                              }}
+                        {/* Duplicate certificates for infinite scroll */}
+                        {Array(2).fill(0).map((_, dupIdx) => (
+                          currentCourse.certificates.map((certificate: string, index: number) => (
+                            <div
+                              key={`certificate-${selectedTab}-${dupIdx}-${index}-${certificate}`}
+                              className="flex-shrink-0 text-center focus:outline-none focus:ring-2 focus:ring-[#151bb1] focus:ring-offset-2 rounded-md px-2 py-1 transition-all duration-300 ease-in-out"
+                              tabIndex={0}
+                              role="button"
+                              aria-label={`Certificate: ${certificate}`}
                             >
-                              {certificate}
-                            </span>
-                          </div>
+                              <span
+                                className="font-medium text-sm text-[#0b1131] opacity-70 whitespace-nowrap block"
+                                style={{
+                                  height: '20px',
+                                  lineHeight: '20px',
+                                  overflow: 'hidden',
+                                  textOverflow: 'ellipsis'
+                                }}
+                              >
+                                {certificate}
+                              </span>
+                            </div>
+                          ))
                         ))}
                       </div>
                     </div>
