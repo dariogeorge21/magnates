@@ -104,15 +104,19 @@ export const TestimonialsSection = (): JSX.Element => {
         </div>
 
         {/* Responsive Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 justify-items-center max-w-[1296px] mx-auto">
+         <div className="flex flex-wrap justify-center gap-6 md:gap-8 max-w-[1296px] mx-auto">
           {serviceCards.map((card) => (
             <article
               key={card.id}
-              className="w-full flex justify-center"
+              className="flex justify-center"
+              style={{ width: "340px", height: "420px" }}
             >
               <Card
                 className={`${card.bgColor} rounded-lg shadow-[0px_10px_100px_10px_#0000001a] relative overflow-hidden flex flex-col items-center justify-center`}
-                style={{ width: '340px', height: '420px', minWidth: '340px', minHeight: '420px', maxWidth: '340px', maxHeight: '420px' }}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                }}
                 role="article"
                 aria-labelledby={`card-title-${card.id}`}
               >

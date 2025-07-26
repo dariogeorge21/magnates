@@ -9,7 +9,7 @@ export const AboutUsSection = (): JSX.Element => {
 
   return (
     <section id="about-us" className="relative w-full py-10 md:py-16 bg-white">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-16">
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-16">
           <div className="w-full lg:w-3/5">
             <h3 className="font-['Poppins',Helvetica] font-semibold text-lg md:text-2xl text-[#151bb1] mb-2 md:mb-4">

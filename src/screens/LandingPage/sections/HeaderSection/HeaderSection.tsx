@@ -265,8 +265,8 @@ export const HeaderSection = ({
   studentImageAlt = "Confident student with books showing thumbs up",
   imageWidth = "477px",
   imageHeight = "563px",
-  imageTop = "0px",
-  imageLeft = "797px"
+  imageTop = "50px",
+  imageLeft = "697px"
 }: HeaderSectionProps = {}): JSX.Element => {
   // Hamburger menu state
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
