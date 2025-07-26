@@ -298,7 +298,7 @@ export const OffersSection = (): JSX.Element => {
                 <div className="absolute inset-0">
                   {/* Course Header */}
                   <div className="flex flex-col md:flex-row px-4 md:px-12 pt-6 md:pt-10 pb-4 md:pb-6 relative gap-4 md:gap-0">
-                    <div className="w-full md:w-[282px] font-medium text-xs md:text-sm text-[#0b1131] transition-all duration-300 mb-2 md:mb-0">
+                    <div className="w-full md:w-[282px] mt-8 font-medium text-xs md:text-sm text-[#0b1131] transition-all duration-300 mb-2 md:mb-0">
                       {currentCourse.idealFor}
                     </div>
 

@@ -40,10 +40,10 @@ export const CoursesOverviewSection = (): JSX.Element => {
         <Card className="w-[322px] h-[97px] border-none shadow-none">
           <CardContent className="p-0 flex items-center h-full">
             <div className="flex flex-col">
-              <span className="font-bold text-[34.8px] leading-[39.4px] text-[#191c73] font-sans">
+              <span className="font-bold text-[24.8px] md:text-[34.8px] leading-[29.4px] text-[#191c73] font-sans">
                 Achieve
               </span>
-              <span className="font-light text-[29px] leading-[39.4px] text-[#101828] font-sans">
+              <span className="font-light text-[19px] md:text-[29px] leading-[29.4px] text-[#101828] font-sans">
                 Certifications
               </span>
             </div>
@@ -56,7 +56,7 @@ export const CoursesOverviewSection = (): JSX.Element => {
 
         <div
           ref={scrollRef}
-          className="w-full max-w-[calc(100%-322px)] ml-4 overflow-x-scroll scrollbar-hide"
+          className="w-full max-w-[calc(60%)] ml-2 overflow-x-scroll scrollbar-hide"
           tabIndex={0}
           aria-label="Certifications overview scroll area"
           style={{
@@ -66,7 +66,7 @@ export const CoursesOverviewSection = (): JSX.Element => {
             msOverflowStyle: "none"
           }}
         >
-          <div className="flex items-center gap-[60px] py-4 min-w-max">
+          <div className="flex items-center gap-[40px] py-2 min-w-max">
             {/* Duplicate scrollItems for infinite scroll */}
             {Array(2).fill(0).map((_, dupIdx) => (
               scrollItems.map((item, index) => (
