@@ -265,7 +265,7 @@ export const HeaderSection = ({
   studentImageAlt = "Confident student with books showing thumbs up",
   imageWidth = "477px",
   imageHeight = "563px",
-  imageTop = "250px",
+  imageTop = "0px",
   imageLeft = "797px"
 }: HeaderSectionProps = {}): JSX.Element => {
   // Hamburger menu state
@@ -289,7 +289,7 @@ export const HeaderSection = ({
       data-model-id="1:548-frame"
     >
       {/* Navigation */}
-      <header className="container mx-auto py-6 px-4 flex justify-between items-center relative z-20">
+      <header className="container mx-auto py-6 px-8 flex justify-between items-center relative z-20">
         {/* ...logo code... */}
         <div className="flex items-center">
         <div className="flex items-center space-x-2">
@@ -407,7 +407,7 @@ export const HeaderSection = ({
       </header>
 
       {/* Hero Content - Two Column Layout */}
-      <main className="container mx-auto px-4 pt-8 pb-16 flex flex-col lg:flex-row items-center min-h-[calc(100vh-120px)] relative z-10" role="main" aria-label="Hero section">
+      <main className="container mx-auto px-8 pt-8 pb-16 flex flex-col lg:flex-row items-center min-h-[calc(100vh-120px)] relative z-10" role="main" aria-label="Hero section">
         {/* Left Content Block */}
         <div
           className="lg:w-1/2 mb-12 lg:mb-0 relative z-20 hero-overlap lg:min-h-[280px]"
@@ -464,8 +464,8 @@ export const HeaderSection = ({
         className="pointer-events-none z-15 animate-float decorative-coin-right"
         style={{
           position: 'absolute',
-          right: '143px',
-          bottom: '410px',
+          right: '40px',
+          bottom: '250px',
           width: 'auto',
           height: 'auto'
         }}
