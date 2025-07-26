@@ -287,7 +287,7 @@ export const OffersSection = (): JSX.Element => {
             animation: 'fadeInSlide 0.5s ease-in-out'
           }}
         >
-          <Card className="w-full rounded-lg shadow-[0px_10px_100px_10px_#0000001a] relative overflow-hidden">
+          <Card className="w-full rounded-lg shadow-[0px_10px_100px_10px_#0000001a] relative overflow-scroll">
             <CardContent className="p-0">
               {/* Background Effect */}
               <div
