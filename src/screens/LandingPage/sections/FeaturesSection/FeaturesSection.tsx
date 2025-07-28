@@ -35,7 +35,7 @@ export const FeaturesSection = (): JSX.Element => {
           <img
             className="w-full h-auto object-contain"
             alt="Industry expert teaching students image"
-            src="https://c.animaapp.com/mc28gt7czECAIi/img/group-115.png"
+            src="/public/assets/FeaturesSection/IndustryExpert.png"
           />
         </div>
       </div>
