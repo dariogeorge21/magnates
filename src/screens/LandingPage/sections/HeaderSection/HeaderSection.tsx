@@ -23,7 +23,7 @@ const SmallCircle = () => (
 // Left Coin Component
 const CoinLeft = () => (
   <img src="/public/assets/HeaderSection/CoinLeft.svg" alt="CoinLeft" />
-);
+);  
 
 // Right Coin Component
 const CoinRight = () => (
@@ -32,7 +32,7 @@ const CoinRight = () => (
 
 // Star Component
 const Star = () => (
-  <img src="/public/assets/HeaderSection/Star.svg" alt="Star" />
+  <img src="../../../../../public/assets/HeaderSection/Star.svg" alt="Star" />
 );
 
 export const HeaderSection = ({
